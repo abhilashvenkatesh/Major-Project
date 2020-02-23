@@ -40,7 +40,7 @@
 \begin{center}
 \textit{Major Project Report on} \\
 \vspace{2 mm}
-\Large{\textsc{ Remote OS Image cloning and  deployment management }}   % Your major Project Title
+\Large{\textsc{ Remote Operating System Image Management }}   % Your major Project Title
 
 \vspace{7 mm}
 \large{\textbf{                  % Group members name
@@ -50,8 +50,8 @@ Gaurav U D ( 16IT113 )
 }}
 \\
 \vspace{4 mm}
-Under the Guidance of,\\
-\textbf{Dr Jaidhar C D}\\         % Name of your guide
+Under the Guidance of\\
+\textbf{Dr. Jaidhar C D}\\         % Name of your guide
 Department of Information Technology, NITK Surathkal\\
 \vspace{4 mm}
 \textit{Date of Submission: 18/02/2020}
@@ -122,7 +122,7 @@ Date:\hfill \textit{(Name and Signature of Major Project Guide)}
 
 \newpage
          \begin{abstract}
-Every computer lab session has its own set of requirements and software to be installed. Manual installation and maintenance of this software is a tedious task. Hence this project aims to develop a computer imaging solution that can capture OS images with all the required software pre-installed and deploys these images on the individual client systems.
+Every computer lab session has its own set of requirements and software to be installed. Manual installation and maintenance of this software is a tedious task. Hence this project aims to develop a computer imaging solution that can capture operating system (OS) images with all the required software pre-installed and deploys these images on the individual client systems.
 The bare-metal client systems boot after connecting to the network using PXE (Preboot Execution Environment). The client can then choose an OS image they want to deploy,  from the available OS images from the server. Alternatively, the administrator can also deploy the images on each client machine. The OS image is then sent to the client machine, which installs it in its local hard disk and then reboots using the newly installed OS.
 
 
@@ -134,7 +134,7 @@ The bare-metal client systems boot after connecting to the network using PXE (Pr
 
 \newpage
 \tableofcontents
-\chapter{Glossary}
+% \chapter{Glossary}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Page 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -154,7 +154,7 @@ The bare-metal client systems boot after connecting to the network using PXE (Pr
 Each computer lab session has its own set of requirements in terms of the needed software and type of Operating System (OS). The traditional method is to install the required OS through USB to individual computers. If each lab session has different OS and software requirements, then this method is inefficient as it requires more time and manual intervention.
 \paragraph{}
 Remote OS image deployment refers to deploying the image stored on a remote server on to bare metal client computers with no or little software initially on the hard disk,  connected to a LAN  network. The image here refers to a “disk image” which contains OS along with its root file system and other partitions of the disk. 
-In each lab session, computers ( clients attached to LAN ) boot to the menu containing a list of available OS images, and the client chooses one among them to be deployed. The image is then deployed from the remote server on to the client machine, and the client reboots to the deployed OS. Lab administrators may first install an OS with required software on a computer and make an image of the system, which can then be placed in a storage server, and through this deployment process, it can be installed on all clients. If any of the students corrupt the computers (clients), he/she needs to reboot the system and deploy the image again from the server for precise installation. 
+In each lab session, computers ( clients attached to LAN ) boot to the menu containing a list of available OS images, and the client chooses one among them to be deployed. The image is then deployed from the remote server on to the client machine, and the client reboots to the deployed OS. Lab administrators may first install an OS with required software on a computer and make an image of the system, which can then be placed in a storage server, and through this deployment process, it can be installed on all clients. If any of the students corrupt the computers (clients), student needs to reboot the system and deploy the image again from the server for precise installation. 
 \vspace{0.5cm}
 
 \newpage
@@ -170,7 +170,7 @@ Network enters Highly-Efficient Management Solutions based on Intel PXE-
 Based on Remote Cloning System \cite{LiJinhui} uses PXE boot and multicast technology for cloning and imaging. The paper explains in detail about PXE technology, the basic protocols it supports, and the setting up of PXE enabled servers in the Windows2000.
 It uses Norton Ghost cloning software, which is now proprietary software. The tool supports multicast, i.e., sends the image once from the server for deployment to all the clients in the multicast session. Their system adopts an NTFS file system at the storage node as it provides a large capacity of file storage, making the storing of image files ( greater or equal to 4GB) more convenient. This work uses many proprietary software components to build the system, and the work is mostly based on how to set up and integrate Norton Ghost Multicast technology for cloning and imaging system with little or no focus on improving the existing system on multicasting of images through the network. It also does not mention the design of the image management system in a software view, i.e., various functionalities that provide for administrators and students.
 \paragraph{}
-Fog project \cite{fogproject} is an open-source cloning and image management solution. The administrator initiates image deployment on a single computer or multiple computers by means of a web interface\cite{wiki}. The client can choose and initiate image deployment using PXE(Preboot Execution Environment)\cite{PXE}. Regardless of the way of initiating the deployment, the client is booted from the PXE network, and the deployed image is downloaded from the remote server and deployed to client local hard disk through any one of the cloning utilities like partclone\cite{Partclone} or partimage\cite{Partimage} which are included in the tiny operating system. IPXE\cite{IPXE} software is used as the bootloader, which boots to a tiny Linux based operating system (minimal kernel and file system, which has image cloning utilities) downloaded from the network and deploys the image from storage node (remote server containing the images). It also supports both unicast and multicast ways of image deployment. Fog project achieves multicasting through Linux based tool called Udpcast. It does not support client-oriented image capture and saving of client files between imaging.
+Fog project \cite{fogproject} is an open-source cloning and image management solution. The administrator initiates image deployment on a single computer or multiple computers by means of a web interface \cite{wiki}. The client can choose and initiate image deployment using PXE(Preboot Execution Environment) \cite{PXE}. Regardless of the way of initiating the deployment, the client is booted from the PXE network, and the deployed image is downloaded from the remote server and deployed to client local hard disk through any one of the cloning utilities like partclone \cite{Partclone} or partimage \cite{Partimage} which are included in the tiny operating system. IPXE \cite{IPXE} software is used as the bootloader, which boots to a tiny Linux based operating system (minimal kernel and file system, which has image cloning utilities) downloaded from the network and deploys the image from storage node (remote server containing the images). It also supports both unicast and multicast ways of image deployment. Fog project achieves multicasting through Linux based tool called Udpcast. It does not support client-oriented image capture and saving of client files between imaging.
 
 \subsection{\usefont{T1}{phv}{b}{it}Tools}
 
@@ -199,7 +199,7 @@ GNU GRUB (short for GNU GRand Unified Bootloader, commonly referred to as GRUB) 
 
 Briefly, a boot loader is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the operating system kernel software (such as Linux). The kernel, in turn, initializes the rest of the operating system (e.g., Ubuntu). GRUB version 2 is a multi-stage bootloader. First, core.img is loaded to main memory by diskboot.img, which is loaded by boot.img,  in MBR partitioned disk. Core.efi is loaded to memory in UEFI firmware computers by /efi/<distro>/grubx64.efi present in EFI system partition. The core image then loads other necessary modules such as normal.mod, which helps in parsing the GRUB configuration file (grub.cfg). The grub.cfg contains the location of kernels, initramfs along with their boot parameters, GRUB parses the file and executes the commands in the configuration file. It also has an excellent scripting language and text-based menu system.
 
-GRUB also consists of utilities such as grub-mkconfig - helps in detecting the OS(s) in HDD and create grub.cfg, grub-mkimage - creates core image from the built GRUB modules, grub-mknetdir - prepares a GRUB netboot directory required for network boot. Hence, GRUB supports boot from local HDD and as well as network boot. GRUB is compatible with almost all target systems - BIOS, UEFI, X86\_32, x86\_64, PowerPC. It also supports booting from HTTP in addition to the TFTP server.
+GRUB also consists of utilities such as grub-mkconfig - helps in detecting the OS(s) in HDD and create grub.cfg, grub-mkimage - creates core image from the built GRUB modules, grub-mknetdir - prepares a GRUB netboot directory required for network boot. Hence, GRUB supports boot from local HDD and as well as network boot. GRUB is compatible with almost all target systems - BIOS, UEFI, x86\_32, x86\_64, PowerPC. It also supports booting from HTTP in addition to the TFTP server.
 
 \subsection{\usefont{T1}{phv}{b}{it} Outcome of Literature Survey}
 In labs, the requirement is to have different OS/software or both for each lab session. Hence there is a need for frequent imaging, and sometimes the same set of OS/software is needed multiple times. For example, subject A requires specific software and OS, and during each session of subject A lab, that particular OS image needs to be installed and used, i.e., the same image is being used by the subject A lab periodically. Fog project always downloads the image through the network and deploy it. It does not exploit the fact that the same image is being reused periodically to optimize image transfer from the network, i.e., does not have a cache-like mechanism to prevent re-downloading of the same image.
@@ -213,15 +213,15 @@ GRUB has greater functionality in booting from local HDD, good scripting languag
  Making the system as open-source leads to easier adoption in educational institutions, gives a platform for more development, and making the system more features rich and end consumer-oriented. 
 
 \subsection{\usefont{T1}{phv}{b}{it}Problem Statement}
-The aim is to design and develop an efficient OS image cloning and deployment system where bare-metal client systems can boot from remote OS images
-
+% The aim is to design and develop an efficient OS image cloning and deployment system where bare-metal client systems can boot from remote OS images
+To design and develop an efficient and simple remote OS image cloning and deployment image managment system for bare-metal computers and virtual machines.
 \subsection{\usefont{T1}{phv}{b}{it}Objectives}
 \begin{enumerate}
-\item To deploy OS images remotely on bare metal clients.
+\item To deploy remote OS images  on bare hardware machine client.
 \item To support Client driven deployment, i.e., the client has the ability to choose the required image to be deployed
-\item To develop a user interface for the administrator to manage image capture and deployment
-\item To optimize the process of image capture in terms of space and time
-\item To develop a mechanism for time optimized large scale frequent unicast and multicast  deployment of images 
+\item To develop a user interface for the administrator to manage remote OS image capture and deployment
+\item To optimize the process of remote OS image capture in terms of space and time
+\item To develop a mechanism for time optimized large scale frequent unicast and multicast  deployment of remote OS images 
 \item To develop an open-source software product
 \end{enumerate}
 
@@ -549,8 +549,10 @@ Various screenshots of Web UI are shown to demonstrate the features of the web a
 %client registration
 %image deployment
 \newpage
-\section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Conclusion and Future work}
- The designed architecture, i.e., PXE boot, remote OS cloning, and image deployment and web base image cloning and deployment management, are implemented in the form of a prototype. Currently, this project supports remote OS client-driven and web-based image deployment to VM or bare metal clients using Partclone, which are connected through a LAN network. The cloned OS images are deployed on the remote machines as expected, and the clients can multi-boot into any one of the OSs. The cache mechanism is partially implemented. The image deployment system supports UEFI firmware clients completely. The following work has to be carried out in the future.
+\section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Conclusions and Future work}
+ The designed architecture, i.e., PXE boot, remote OS cloning, and image deployment and web base image cloning and deployment management, are implemented in the form of a prototype. Currently, this project supports re The designed architecture, i.e., PXE boot, remote OS cloning, and image deployment and web base image cloning and deployment management, are implemented in the form of a prototype. Currently, this project supports remote OS client-driven and web-based image deployment to VM or bare metal clients using Partclone, which are connected through a LAN network. The cloned OS images are deployed on the r
+
+mote OS client-driven and web-based image deployment to VM or bare metal clients using Partclone, which are connected through a LAN network. The cloned OS images are deployed on the remote machines as expected, and the clients can multi-boot into any one of the OSs. The cache mechanism is partially implemented. The image deployment system supports UEFI firmware clients completely. The following work has to be carried out in the future.
 \begin{enumerate}
     \item Implement suitable cache replacement policy  
     \item Improve Web UI and add features such as cloning, group image deployment.
@@ -559,14 +561,6 @@ Various screenshots of Web UI are shown to demonstrate the features of the web a
     % \item Support partition wise OS imaging and booting must be included
     \item Proper Scaling and testing measures must be undertaken
 \end{enumerate}
-% \newpage
-\section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Timeline}
- \begin{figure}[h!]
-    \centering
-    \includegraphics[width=\linewidth]{ganntt1.png}
-    \caption{Timeline of work}
-    \label{timeline}
-\end{figure}
 
 
 %create BibTex files for references
@@ -601,7 +595,7 @@ Various screenshots of Web UI are shown to demonstrate the features of the web a
 
 % \end{enumerate}
 \newpage
-\chapter{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Glossary}
+\section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Glossary}
 \begin{enumerate}
        \item BIOS: BIOS (an acronym for Basic Input/Output System and also known as the System BIOS, ROM BIOS, or PC BIOS) is the firmware used to perform hardware initialization during the booting process (power-on startup), and to provide runtime services for operating systems and programs.
     \item dd: dd is a command-line utility for Unix and Unix-like operating systems; the primary purpose is to clone/ create a backup and restore/write the hard disk. This tool even
@@ -618,4 +612,14 @@ Various screenshots of Web UI are shown to demonstrate the features of the web a
     \item Sparse Image: In this context, it refers to a disk image containing a sufficient amount of free space compared to the used space of the disk.
     \item Multi-boot: Multi-booting is the act of installing multiple operating systems on a computer, and being able to choose which one to boot. The term dual-booting refers to the common configuration of specifically two operating systems. Multi-booting may require a custom boot loader. 
 \end{enumerate}
+\newpage
+\section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Timeline}
+ \begin{figure}[h!]
+    \centering
+    % \includegraphics[width=\linewidth]{timeline.jpeg}
+    \includegraphics[height=3in, width=7in, angle=-90]{timeline.jpeg}
+    \caption{Timeline of work}
+    \label{timeline}
+\end{figure}
+
 \end{document}
