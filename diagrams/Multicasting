@@ -1,23 +1,86 @@
-<mxfile host="app.diagrams.net" modified="2020-05-03T18:04:00.853Z" agent="5.0 (X11)" etag="9399bKx0FqfhYTZ3eEyY" version="13.0.6" type="github">
+<mxfile host="app.diagrams.net" modified="2020-05-04T11:34:51.401Z" agent="5.0 (X11)" etag="qB1nmzN66ShFKHpjZ6IA" version="13.0.6" type="github">
   <diagram id="Bps3ISUXywT3SV9oU1lc" name="Page-1">
     <mxGraphModel dx="1355" dy="753" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="EOTFksdkPM02m7KntWb5-4" value="Client" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="110" y="80" width="100" height="300" as="geometry" />
+        <mxCell id="EOTFksdkPM02m7KntWb5-4" value="Client" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="220" y="80" width="100" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="EOTFksdkPM02m7KntWb5-5" value="Centralized Web server" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="350" y="80" width="100" height="300" as="geometry" />
+        <mxCell id="EOTFksdkPM02m7KntWb5-5" value="Centralized Web server" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="420" y="80" width="100" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="EOTFksdkPM02m7KntWb5-6" value="Storage" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="600" y="80" width="100" height="300" as="geometry" />
+        <mxCell id="EOTFksdkPM02m7KntWb5-6" value="Storage" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="670" y="80" width="100" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="EOTFksdkPM02m7KntWb5-7" value="dispatch" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1" target="EOTFksdkPM02m7KntWb5-5">
+        <mxCell id="EOTFksdkPM02m7KntWb5-7" value="" style="html=1;verticalAlign=bottom;endArrow=block;" parent="1" target="EOTFksdkPM02m7KntWb5-5" edge="1" source="EOTFksdkPM02m7KntWb5-6">
           <mxGeometry width="80" relative="1" as="geometry">
-            <mxPoint x="160" y="170" as="sourcePoint" />
-            <mxPoint x="240" y="170" as="targetPoint" />
+            <mxPoint x="699.5" y="230" as="sourcePoint" />
+            <mxPoint x="499.5" y="230" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-1" value="Admin" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="80" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-2" value="Create Multicast task" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1" target="EOTFksdkPM02m7KntWb5-5">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="100" y="160" as="sourcePoint" />
+            <mxPoint x="180" y="160" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="150" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-3" value="Create Multicast task for &#39;x&#39; receivers" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1" target="EOTFksdkPM02m7KntWb5-6">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="470" y="190" as="sourcePoint" />
+            <mxPoint x="740" y="190" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="520" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-4" value="Allocate and sends mcastaddr and port" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="467" y="212" width="250" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-6" value="" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="270" y="257" as="sourcePoint" />
+            <mxPoint x="469.5" y="257" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-7" value="Task request" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="325" y="237" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-9" value="Signal to start multicast session" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1" source="EOTFksdkPM02m7KntWb5-5">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="480" y="272" as="sourcePoint" />
+            <mxPoint x="720" y="272" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-13" value="(Only Once)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="HVFiVviAhdmf0j0nEZC6-9">
+          <mxGeometry x="-0.1287" y="-5" relative="1" as="geometry">
+            <mxPoint y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-11" value="" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="471.5" y="289" as="sourcePoint" />
+            <mxPoint x="272" y="289" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-12" value="Provide task details" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="311" y="273" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-16" value="" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="272" y="321" as="sourcePoint" />
+            <mxPoint x="471.5" y="321" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-17" value="Status " style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="304" width="50" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
