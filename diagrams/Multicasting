@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-05-04T11:34:51.401Z" agent="5.0 (X11)" etag="qB1nmzN66ShFKHpjZ6IA" version="13.0.6" type="github">
+<mxfile host="app.diagrams.net" modified="2020-05-04T11:52:09.996Z" agent="5.0 (X11)" etag="rSBMgpMPyU6WSZTu8ebH" version="13.0.6" type="github">
   <diagram id="Bps3ISUXywT3SV9oU1lc" name="Page-1">
     <mxGraphModel dx="1355" dy="753" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -31,7 +31,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="HVFiVviAhdmf0j0nEZC6-3" value="Create Multicast task for &#39;x&#39; receivers" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1" target="EOTFksdkPM02m7KntWb5-6">
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-3" value="Request Multicast task for &#39;x&#39; receivers" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1" target="EOTFksdkPM02m7KntWb5-6">
           <mxGeometry width="80" relative="1" as="geometry">
             <mxPoint x="470" y="190" as="sourcePoint" />
             <mxPoint x="740" y="190" as="targetPoint" />
@@ -40,7 +40,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="HVFiVviAhdmf0j0nEZC6-4" value="Allocate and sends mcastaddr and port" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-4" value="Allocate and sends mcastaddr, port no" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
           <mxGeometry x="467" y="212" width="250" height="20" as="geometry" />
         </mxCell>
         <mxCell id="HVFiVviAhdmf0j0nEZC6-6" value="" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="1">
