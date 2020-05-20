@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-05-18T11:04:09.157Z" agent="5.0 (X11)" etag="ppmkU6IaVhU_pv0k5aWq" version="13.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2020-05-20T17:04:20.334Z" agent="5.0 (X11)" etag="JpNVp2y_wxsrMZ7PiUhc" version="13.1.3" type="github">
   <diagram id="MkvmR6GyA5649JcyQoYJ" name="Page-1">
     <mxGraphModel dx="1355" dy="747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -351,7 +351,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="g312v4O31cJGZhUB2Ul_-6" value="DHCP_ip_gateway" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-          <mxGeometry x="736" y="343" width="110" height="50" as="geometry" />
+          <mxGeometry x="700" y="360.17" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="g312v4O31cJGZhUB2Ul_-11" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=none;endFill=0;" parent="1" source="g312v4O31cJGZhUB2Ul_-7" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -359,7 +359,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="g312v4O31cJGZhUB2Ul_-7" value="DHCP_ip_DNS" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-          <mxGeometry x="636" y="333" width="94" height="50" as="geometry" />
+          <mxGeometry x="634" y="320" width="94" height="50" as="geometry" />
         </mxCell>
         <mxCell id="g312v4O31cJGZhUB2Ul_-16" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=none;endFill=0;" parent="1" source="g312v4O31cJGZhUB2Ul_-14" target="g312v4O31cJGZhUB2Ul_-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -372,6 +372,14 @@
         </mxCell>
         <mxCell id="g312v4O31cJGZhUB2Ul_-15" value="DHCP_ip_end" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="578" y="392" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CKfvQiL5qxDqg_yjbaHB-2" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="CKfvQiL5qxDqg_yjbaHB-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CKfvQiL5qxDqg_yjbaHB-1" value="subnet_mask" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="760" y="302" width="80" height="48" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
