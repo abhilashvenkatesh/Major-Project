@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-05-26T17:32:25.419Z" agent="5.0 (X11)" etag="MzbPXiF4z4J-bUpohkgm" version="13.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2020-05-26T17:39:43.371Z" agent="5.0 (X11)" etag="fsNh7sOp56kpuMMsl97X" version="13.1.3" type="github">
   <diagram id="Bps3ISUXywT3SV9oU1lc" name="Page-1">
-    <mxGraphModel dx="1567" dy="781" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1355" dy="747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -75,36 +75,42 @@
         </mxCell>
         <mxCell id="HVFiVviAhdmf0j0nEZC6-16" value="" style="html=1;verticalAlign=bottom;endArrow=block;fontFamily=Times New Roman;fontSize=13;" parent="1" edge="1">
           <mxGeometry width="80" relative="1" as="geometry">
-            <mxPoint x="272" y="361" as="sourcePoint" />
-            <mxPoint x="471.5" y="361" as="targetPoint" />
+            <mxPoint x="272" y="374" as="sourcePoint" />
+            <mxPoint x="471.5" y="374" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="HVFiVviAhdmf0j0nEZC6-17" value="&lt;div style=&quot;font-size: 13px&quot;&gt;Status after completion &lt;br style=&quot;font-size: 13px&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 13px&quot;&gt;of image deployment&lt;br style=&quot;font-size: 13px&quot;&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontFamily=Times New Roman;fontSize=13;" parent="1" vertex="1">
-          <mxGeometry x="295" y="340" width="140" height="40" as="geometry" />
+          <mxGeometry x="295" y="353" width="140" height="40" as="geometry" />
         </mxCell>
         <mxCell id="HVFiVviAhdmf0j0nEZC6-20" value="&#39;y&#39;&amp;nbsp; named image" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontFamily=Times New Roman;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="540" y="192" width="100" height="20" as="geometry" />
         </mxCell>
         <mxCell id="j-HJhSEjsgzTxNeEsgFx-6" value="" style="html=1;verticalAlign=bottom;endArrow=block;fontFamily=Times New Roman;fontSize=13;" edge="1" parent="1">
           <mxGeometry width="80" relative="1" as="geometry">
-            <mxPoint x="719.5" y="327" as="sourcePoint" />
-            <mxPoint x="270" y="327" as="targetPoint" />
+            <mxPoint x="719.5" y="347" as="sourcePoint" />
+            <mxPoint x="270" y="347" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="j-HJhSEjsgzTxNeEsgFx-9" value="Serves &#39;y&#39; image when all &#39;x&#39; clients join" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="482" y="310" width="220" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="j-HJhSEjsgzTxNeEsgFx-16" value="&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-weight: normal; font-size: 13px; line-height: 19px;&quot;&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;&lt;br style=&quot;font-size: 13px;&quot;&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="530" y="400" width="230" height="30" as="geometry" />
+          <mxGeometry x="482" y="329" width="220" height="20" as="geometry" />
         </mxCell>
         <mxCell id="j-HJhSEjsgzTxNeEsgFx-17" value="Status after completion &lt;br style=&quot;font-size: 13px;&quot;&gt;of multicast session" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="531" y="338" width="140" height="40" as="geometry" />
+          <mxGeometry x="531" y="351" width="140" height="40" as="geometry" />
         </mxCell>
         <mxCell id="j-HJhSEjsgzTxNeEsgFx-18" value="" style="html=1;verticalAlign=bottom;endArrow=none;startArrow=block;startFill=1;endFill=0;fontFamily=Times New Roman;fontSize=13;" edge="1" parent="1">
           <mxGeometry width="80" relative="1" as="geometry">
-            <mxPoint x="472" y="361" as="sourcePoint" />
-            <mxPoint x="722" y="361" as="targetPoint" />
+            <mxPoint x="472" y="374" as="sourcePoint" />
+            <mxPoint x="722" y="374" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="j-HJhSEjsgzTxNeEsgFx-19" value="" style="html=1;verticalAlign=bottom;endArrow=none;fontFamily=Times New Roman;fontSize=13;startArrow=block;startFill=1;endFill=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="718.5" y="324" as="sourcePoint" />
+            <mxPoint x="269" y="324" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j-HJhSEjsgzTxNeEsgFx-22" value="Joins Multicast session" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontFamily=Times New Roman;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="321" y="307" width="140" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
