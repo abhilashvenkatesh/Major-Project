@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-05-26T17:28:20.381Z" agent="5.0 (X11)" etag="qFu3C2pK1ARW21bWdWw0" version="13.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2020-05-26T17:29:07.049Z" agent="5.0 (X11)" etag="-Yg8jGtCuNzqLEjM9_l3" version="13.1.3" type="github">
   <diagram id="Bps3ISUXywT3SV9oU1lc" name="Page-1">
     <mxGraphModel dx="1567" dy="781" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -79,7 +79,7 @@
             <mxPoint x="471.5" y="361" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="HVFiVviAhdmf0j0nEZC6-17" value="&lt;div style=&quot;font-size: 13px;&quot;&gt;Status after completion &lt;br style=&quot;font-size: 13px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 13px;&quot;&gt;image deployment&lt;br style=&quot;font-size: 13px;&quot;&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontFamily=Times New Roman;fontSize=13;" parent="1" vertex="1">
+        <mxCell id="HVFiVviAhdmf0j0nEZC6-17" value="&lt;div style=&quot;font-size: 13px&quot;&gt;Status after completion &lt;br style=&quot;font-size: 13px&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 13px&quot;&gt;of image deployment&lt;br style=&quot;font-size: 13px&quot;&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontFamily=Times New Roman;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="295" y="340" width="140" height="40" as="geometry" />
         </mxCell>
         <mxCell id="HVFiVviAhdmf0j0nEZC6-20" value="&#39;y&#39; image" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontFamily=Times New Roman;fontSize=13;" parent="1" vertex="1">
