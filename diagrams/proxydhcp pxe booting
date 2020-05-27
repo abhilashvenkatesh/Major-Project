@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-05-27T04:43:37.963Z" agent="5.0 (X11)" etag="dBVTZCIaOAeSiyjXIKWS" version="13.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2020-05-27T04:46:55.759Z" agent="5.0 (X11)" etag="x99uEiO13sK1P8P_bRAs" version="13.1.3" type="github">
   <diagram id="RGwLsPOHh2NVmnfnJzE_" name="Page-1">
     <mxGraphModel dx="1355" dy="747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -31,7 +31,7 @@
             </mxGeometry>
           </mxCell>
         </UserObject>
-        <UserObject label="Serves IP address, subnet mask, gateway IP " lucidchartObjectId="A~QvfdHYFc35" id="HSs5BDmuaPEM6WorxjJr-15">
+        <UserObject label="Serves IP address, subnet mask, gateway IP to all clients" lucidchartObjectId="A~QvfdHYFc35" id="HSs5BDmuaPEM6WorxjJr-15">
           <mxCell style="html=1;whiteSpace=wrap;;fontSize=13;fontColor=#000000;spacing=3;strokeOpacity=0;fillOpacity=0;fillColor=#ffffff;" vertex="1" parent="1">
             <mxGeometry x="312" y="343" width="144" height="54" as="geometry" />
           </mxCell>
@@ -55,7 +55,7 @@
         <mxCell id="HSs5BDmuaPEM6WorxjJr-34" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="HSs5BDmuaPEM6WorxjJr-31" target="HSs5BDmuaPEM6WorxjJr-31">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <UserObject label="Serves TFTP server IP, boot file name" lucidchartObjectId="A~QvfdHYFc35" id="HSs5BDmuaPEM6WorxjJr-38">
+        <UserObject label="Serves TFTP server IP and boot file name only to PXE clients" lucidchartObjectId="A~QvfdHYFc35" id="HSs5BDmuaPEM6WorxjJr-38">
           <mxCell style="html=1;whiteSpace=wrap;;fontSize=13;fontColor=#000000;spacing=3;strokeOpacity=0;fillOpacity=0;fillColor=#ffffff;" vertex="1" parent="1">
             <mxGeometry x="520" y="456" width="144" height="54" as="geometry" />
           </mxCell>
