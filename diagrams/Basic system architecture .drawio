@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-05-27T04:43:58.590Z" agent="5.0 (X11)" etag="quhAQBTXUHNJ1eoMFWPX" version="13.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2020-05-27T06:05:55.890Z" agent="5.0 (X11)" etag="vtEYaSNDiHUd5PHlZ-69" version="13.1.3" type="github">
   <diagram id="2M21agJGZ8iyQy0Du0Jo" name="Page-1">
-    <mxGraphModel dx="1355" dy="747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1344" dy="517" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -51,7 +51,7 @@
             </mxGeometry>
           </mxCell>
         </UserObject>
-        <UserObject label="Assign IP address, give location of boot file on tftp server" lucidchartObjectId="A~QvfdHYFc35" id="SCCUJkE0aKdH4ksJEnu--10">
+        <UserObject label="Assign IP address, give location of boot file on TFTP server" lucidchartObjectId="A~QvfdHYFc35" id="SCCUJkE0aKdH4ksJEnu--10">
           <mxCell style="html=1;whiteSpace=wrap;;fontSize=13;fontColor=#000000;spacing=3;strokeOpacity=0;fillOpacity=0;fillColor=#ffffff;" parent="1" vertex="1">
             <mxGeometry x="312" y="343" width="144" height="54" as="geometry" />
           </mxCell>
