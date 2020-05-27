@@ -1,1 +1,66 @@
-<mxfile host="app.diagrams.net" modified="2020-05-27T04:35:45.525Z" agent="5.0 (X11)" version="13.1.3" etag="T5QWGYGXp0SsePoMmTZH" type="github"><diagram id="RGwLsPOHh2NVmnfnJzE_">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-05-27T04:43:37.963Z" agent="5.0 (X11)" etag="dBVTZCIaOAeSiyjXIKWS" version="13.1.3" type="github">
+  <diagram id="RGwLsPOHh2NVmnfnJzE_" name="Page-1">
+    <mxGraphModel dx="1355" dy="747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" lucidchartObjectId="Q3QvZ5mVjj_w" id="HSs5BDmuaPEM6WorxjJr-6">
+          <mxCell style="html=1;whiteSpace=wrap;shape=image;fontSize=11;spacing=0;strokeColor=none;strokeOpacity=100;strokeWidth=0;image=https://images.lucidchart.com/images/76043290-3eca-47d3-a1d5-19b913a3a131/content;" vertex="1" parent="1">
+            <mxGeometry x="456" y="336" width="83" height="84" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Client Computer " lucidchartObjectId="I4QvwSpZ2hfq" id="HSs5BDmuaPEM6WorxjJr-7">
+          <mxCell style="html=1;whiteSpace=wrap;;fontSize=13;fontColor=#000000;spacing=3;strokeOpacity=0;fillOpacity=0;fillColor=#ffffff;" vertex="1" parent="1">
+            <mxGeometry x="380" y="422" width="144" height="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" lucidchartObjectId="~5QvC3WyoEIg" id="HSs5BDmuaPEM6WorxjJr-8">
+          <mxCell style="html=1;whiteSpace=wrap;shape=image;fontSize=11;spacing=0;strokeColor=none;strokeOpacity=100;strokeWidth=0;image=https://images.lucidchart.com/images/235d3bad-5ff0-44a1-a7b1-b57fd6d121a1/content;" vertex="1" parent="1">
+            <mxGeometry x="200" y="334" width="84" height="88" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="DHCP server" lucidchartObjectId="57QvO-A3U8YZ" id="HSs5BDmuaPEM6WorxjJr-9">
+          <mxCell style="html=1;whiteSpace=wrap;;fontSize=13;fontColor=#000000;spacing=3;strokeOpacity=0;fillOpacity=0;fillColor=#ffffff;" vertex="1" parent="1">
+            <mxGeometry x="170" y="420" width="144" height="36" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" lucidchartObjectId="g-QvmvYCf~uo" id="HSs5BDmuaPEM6WorxjJr-14">
+          <mxCell style="html=1;jettySize=18;fontSize=11;rounded=1;arcSize=0;edgeStyle=orthogonalEdgeStyle;startArrow=block;endFill=1;;endArrow=block;endFill=1;;exitX=1.000000002516688;exitY=0.7624171463473316;exitPerimeter=1;entryX=0;entryY=0.7761904761904759;entryPerimeter=1;" edge="1" parent="1" source="HSs5BDmuaPEM6WorxjJr-8" target="HSs5BDmuaPEM6WorxjJr-6">
+            <mxGeometry width="100" height="100" relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Serves IP address, subnet mask, gateway IP " lucidchartObjectId="A~QvfdHYFc35" id="HSs5BDmuaPEM6WorxjJr-15">
+          <mxCell style="html=1;whiteSpace=wrap;;fontSize=13;fontColor=#000000;spacing=3;strokeOpacity=0;fillOpacity=0;fillColor=#ffffff;" vertex="1" parent="1">
+            <mxGeometry x="312" y="343" width="144" height="54" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="HSs5BDmuaPEM6WorxjJr-37" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.958;entryY=-0.05;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="HSs5BDmuaPEM6WorxjJr-31">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="560" as="sourcePoint" />
+            <mxPoint x="519.972" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" lucidchartObjectId="~5QvC3WyoEIg" id="HSs5BDmuaPEM6WorxjJr-31">
+          <mxCell style="html=1;whiteSpace=wrap;shape=image;fontSize=11;spacing=0;strokeColor=none;strokeOpacity=100;strokeWidth=0;image=https://images.lucidchart.com/images/235d3bad-5ff0-44a1-a7b1-b57fd6d121a1/content;" vertex="1" parent="1">
+            <mxGeometry x="480" y="540" width="84" height="88" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="ProxyDHCP server" lucidchartObjectId="57QvO-A3U8YZ" id="HSs5BDmuaPEM6WorxjJr-32">
+          <mxCell style="html=1;whiteSpace=wrap;;fontSize=13;fontColor=#000000;spacing=3;strokeOpacity=0;fillOpacity=0;fillColor=#ffffff;" vertex="1" parent="1">
+            <mxGeometry x="456" y="628" width="144" height="36" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="HSs5BDmuaPEM6WorxjJr-34" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="HSs5BDmuaPEM6WorxjJr-31" target="HSs5BDmuaPEM6WorxjJr-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="Serves TFTP server IP, boot file name" lucidchartObjectId="A~QvfdHYFc35" id="HSs5BDmuaPEM6WorxjJr-38">
+          <mxCell style="html=1;whiteSpace=wrap;;fontSize=13;fontColor=#000000;spacing=3;strokeOpacity=0;fillOpacity=0;fillColor=#ffffff;" vertex="1" parent="1">
+            <mxGeometry x="520" y="456" width="144" height="54" as="geometry" />
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
