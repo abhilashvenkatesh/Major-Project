@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-05-27T04:54:56.443Z" agent="5.0 (X11)" etag="DNKMGxW83gS9CKOsdxsi" version="13.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2020-05-27T12:30:11.424Z" agent="5.0 (X11)" etag="x8D2BQzbUx4cMYiL-Svz" version="13.1.3" type="github">
   <diagram id="RGwLsPOHh2NVmnfnJzE_" name="Page-1">
-    <mxGraphModel dx="1355" dy="747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1334" dy="517" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -52,7 +52,7 @@
         </mxCell>
         <UserObject label="" lucidchartObjectId="~5QvC3WyoEIg" id="HSs5BDmuaPEM6WorxjJr-31">
           <mxCell style="html=1;whiteSpace=wrap;shape=image;fontSize=11;spacing=0;strokeColor=none;strokeOpacity=100;strokeWidth=0;image=https://images.lucidchart.com/images/235d3bad-5ff0-44a1-a7b1-b57fd6d121a1/content;" vertex="1" parent="1">
-            <mxGeometry x="200" y="506" width="84" height="88" as="geometry" />
+            <mxGeometry x="210" y="520" width="74" height="74" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="ProxyDHCP server" lucidchartObjectId="57QvO-A3U8YZ" id="HSs5BDmuaPEM6WorxjJr-32">
