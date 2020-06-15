@@ -1,12 +1,12 @@
-<mxfile host="app.diagrams.net" modified="2020-04-27T15:42:22.677Z" agent="5.0 (X11)" etag="RYT5jJsjLEtasG8iPrfH" version="13.0.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-06-15T20:22:16.386Z" agent="5.0 (X11)" etag="iS-lFnFED9-Ph5DpKX8D" version="13.2.4" type="github">
   <diagram id="RFX-RBJSIVZxYzgN4kvS" name="Page-1">
-    <mxGraphModel dx="1355" dy="753" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1355" dy="747" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <UserObject label="Display menu of images available on NFS Server" lucidchartObjectId="gKRvSctck2b1" id="lOlRPxrlkIS0HHyydg-t-1">
           <mxCell style="html=1;whiteSpace=wrap;;fontSize=13;fontColor=#000000;spacing=3;strokeOpacity=100;" parent="1" vertex="1">
-            <mxGeometry x="732" y="552" width="156" height="72" as="geometry" />
+            <mxGeometry x="737" y="552" width="156" height="72" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="" lucidchartObjectId="LKRvDZ6UtBkK" id="lOlRPxrlkIS0HHyydg-t-2">
@@ -58,17 +58,17 @@
         </UserObject>
         <UserObject label="Boots the client to a minimal operating system called IDOS" lucidchartObjectId="y8HyZWqW2R-k" id="lOlRPxrlkIS0HHyydg-t-11">
           <mxCell style="html=1;whiteSpace=wrap;;fontSize=13;fontColor=#000000;spacing=3;strokeOpacity=100;" parent="1" vertex="1">
-            <mxGeometry x="732" y="132" width="151" height="72" as="geometry" />
+            <mxGeometry x="737" y="132" width="151" height="72" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="Image deploymentTask ?" lucidchartObjectId="0-HygDVUei.N" id="lOlRPxrlkIS0HHyydg-t-12">
+        <UserObject label="&lt;div&gt;Image &lt;br&gt;&lt;/div&gt;&lt;div&gt;deployment&lt;/div&gt;&lt;div&gt; Task ?&lt;/div&gt;" lucidchartObjectId="0-HygDVUei.N" id="lOlRPxrlkIS0HHyydg-t-12">
           <mxCell style="html=1;whiteSpace=wrap;rhombus;fontSize=13;fontColor=#000000;spacing=3;strokeOpacity=100;" parent="1" vertex="1">
-            <mxGeometry x="745" y="366" width="125" height="108" as="geometry" />
+            <mxGeometry x="745" y="366" width="135" height="124" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="IDOS client communicate with web application" lucidchartObjectId="X.HyIwzP-ToA" id="lOlRPxrlkIS0HHyydg-t-13">
           <mxCell style="html=1;whiteSpace=wrap;;fontSize=13;fontColor=#000000;spacing=3;strokeOpacity=100;" parent="1" vertex="1">
-            <mxGeometry x="732" y="252" width="151" height="72" as="geometry" />
+            <mxGeometry x="737" y="252" width="151" height="72" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="" lucidchartObjectId="Z~HyvMKMTjP5" id="lOlRPxrlkIS0HHyydg-t-14">
@@ -97,7 +97,7 @@
         </mxCell>
         <UserObject label="Image chosen through web app will be deployed" lucidchartObjectId="_eIy9ecO3xXT" id="lOlRPxrlkIS0HHyydg-t-18">
           <mxCell style="html=1;whiteSpace=wrap;;fontSize=13;fontColor=#000000;spacing=3;strokeOpacity=100;" parent="1" vertex="1">
-            <mxGeometry x="528" y="384" width="131" height="72" as="geometry" />
+            <mxGeometry x="528" y="392" width="131" height="72" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="" lucidchartObjectId="kgIyRe3__U0~" id="lOlRPxrlkIS0HHyydg-t-19">
