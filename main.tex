@@ -12,6 +12,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{booktabs}
+\usepackage{enumitem}
 %\usepackage[dvips]{graphics}
 \usepackage{sectsty}
 \usepackage{chngcntr}
@@ -19,6 +20,7 @@
 \usepackage{algorithmic}
 \usepackage{algorithm2e}
  \usepackage{booktabs}
+ \usepackage{url}
 %\usepackage[dvips]{graphics}
 \sectionfont{\centering}
 %\usepackage{helvet}
@@ -51,10 +53,10 @@ Gaurav U D ( 16IT113 )
 \\
 \vspace{4 mm}
 Under the Guidance of\\
-\textbf{Dr. Jaidhar C D}\\         % Name of your guide
+\textbf{Prof. Jaidhar C D}\\         % Name of your guide
 Department of Information Technology, NITK Surathkal\\
 \vspace{4 mm}
-\textit{Date of Submission: 18/02/2020}
+\textit{Date of Submission: 19/06/2020}
 \\
 \vspace{4 mm}
 in partial fulfillment for the award of the degree
@@ -79,7 +81,7 @@ At
 
 \textbf{National Institute of Technology Karnataka, Surathkal}
 
-\textbf{February 2020}
+\textbf{June 2020}
 \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Page 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -89,7 +91,7 @@ At
 \textbf{\large{Department of Information Technology, NITK Surathkal}} \\
 
 \textbf{\large{Major Project - II}} \\
-\textbf{\large{Progress Report (February 2020)}} \\
+\textbf{\large{Final Report (June 2020)}} \\
 \noindent\rule{12cm}{0.4pt}
 \end{center}
 
@@ -97,7 +99,7 @@ At
 \noindent
 \textbf{Course Code :} IT 499 \\
 \textbf{Course Title:} Major Project - II \\
-\textbf{Project Title:} \emph{Remote OS Image cloning and  deployment management}   % update project title
+\textbf{Project Title:} \emph{Remote Operating System Image Management}   % update project title
 
 \subsubsection*{Project Group:}
 \begin{tabular}{lcl}
@@ -118,12 +120,24 @@ Date:\hfill \textit{(Name and Signature of Major Project Guide)}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Page 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{center}
+\textbf{\large{Acknowledgements}} \\
+\end{center}
+% I  would like to express special thanks of gratitude to Prof. Paul Albuquerque, Head of ITE, HES  and Prof. Sumam David S., Dept EC, NITK for giving this opportunity to intern in HEPIA, Geneva for three months.  I would like to express gratitude to Prof. Florent Gluck, Associate Professor HES and Chassot Sebastien as they gave the golden opportunity and inspired me to undertake this informative project. The completion of this project would not have been possible without their constant guidance, kind support and help.
+% \paragraph{}
+% I would also like to thank Ms Celina Almudever Llacer ( Secretary of International Relations, HES)  for all arrangements during our stay at Geneva. Lastly, I sincerely thank Prof(Retd). Michael Lazryens and Mrs Annick Lazyrens for their kind accommodation, constant support and love throughout our stay in Geneva.
 
+This project would not have been possible without the kind support and help of many
+individuals and organizations. We would like to extend our sincere thanks to all of them. Intially this project started at an internship in HEPIA, Geneva  with Prof. Florent Gluck (Associate Professor, Dept ITE, HEPIA) as the mentor and guide. We would like to thank Prof. Florent Gluck for allowing to continue the internship project as major project in NITK, Mr. Chassot Sebastien (Teaching and Research assistant, HEPIA), Prof. Paul Albuquerque (Head of Dept ITE, HEPIA), Ms. Celina Almudever Llacer (Secretary International Relations, HEPIA), Prof. Sumam David S.(Dept EC, NITK), Prof(Retd). Michael Lazryens and Mrs. Annick Lazyrens for constant support and development of project at HEPIA, Geneva.
 
+We would like to express gratitude towards our guide Prof. Jaidhar C D (Associate Professor, Dept IT, NITK) for constant guidance and encouragement to improve the product developed in this major project. We would like to thank Ms. Mallika (Assistant Programmer, Dept IT, NITK) and Mr. Arvind Kollur (Technical Officer, Dept IT, NITK) for  provisioning computers and helping in testing the ROSIM system in the Project Lab, NITK. Our thanks and appreciations also go to our group members in developing the project and people who have willingly helped us out with their abilities. We are highly indebted to the Department of Information Technology, NITK  and ITE Department of HEPIA, Geneva for their guidance and constant supervision as well as for providing necessary information and resources for the project and also for their support in completing the project.
 \newpage
          \begin{abstract}
-Every computer lab session has its own set of requirements and software to be installed. Manual installation and maintenance of this software is a tedious task. Hence this project aims to develop a computer imaging solution that can capture operating system (OS) images with all the required software pre-installed and deploys these images on the individual client systems.
-The bare-metal client systems boot after connecting to the network using PXE (Preboot Execution Environment). The client can then choose an OS image they want to deploy,  from the available OS images from the server. Alternatively, the administrator can also deploy the images on each client machine. The OS image is then sent to the client machine, which installs it in its local hard disk and then reboots using the newly installed OS.
+Every computer lab session has its own set of requirements and software to be installed. Manual installation and maintenance of this OS with required software is a tedious task. A computer imaging solution solves the problem, it can capture operating system (OS) images with all the required software pre-installed and deploys these images on the one or more client systems at a time. Few projects exist, but each of them have certain deficiencies and are not optimized for college labs especially. In this project we designed, developed and integrate various open-source tools to build the remote operating system image management (ROSIM). ROSIM works based on PXE-booting, Network GRUB as bootloader and a tiny OS containing the required tools called Image Deployment Operating Sytem (IDOS). ROSIM is used through a centralized web application which has cloning, unicast and multicast image deployment as the main functionalities. A novel exist OS imaging and caching is implemented to decrease traffic due to frequent periodic imaging of same image in college labs. Finally, ROSIM supports proxy DHCP based PXE-booting, required in environments where configuring the existing DHCP server is not possible.
+% The bare-metal client systems boot after connecting to the network using PXE (Preboot Execution Environment). The client can then choose an OS image they want to deploy,  from the available OS images from the server.
+
+% Alternatively, the administrator can also deploy the images on each client machine. The OS image is then sent to the client machine, which installs it in its local hard disk and then reboots using the newly installed OS.
 
 
 
@@ -152,9 +166,11 @@ The bare-metal client systems boot after connecting to the network using PXE (Pr
 
 \section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Introduction}
 Each computer lab session has its own set of requirements in terms of the needed software and type of Operating System (OS). The traditional method is to install the required OS through USB to individual computers. If each lab session has different OS and software requirements, then this method is inefficient as it requires more time and manual intervention.
-\paragraph{}
-Remote OS image deployment refers to deploying the image stored on a remote server on to bare metal client computers with no or little software initially on the hard disk,  connected to a LAN  network. The image here refers to a “disk image” which contains OS along with its root file system and other partitions of the disk. 
-In each lab session, computers ( clients attached to LAN ) boot to the menu containing a list of available OS images, and the client chooses one among them to be deployed. The image is then deployed from the remote server on to the client machine, and the client reboots to the deployed OS. Lab administrators may first install an OS with required software on a computer and make an image of the system, which can then be placed in a storage server, and through this deployment process, it can be installed on all clients. If any of the students corrupt the computers (clients), student needs to reboot the system and deploy the image again from the server for precise installation. 
+
+
+Remote Operating System Image Management (ROSIM) is an imaging solution that clones, deploys and manages the images stored on a remote server. Deploying refers to the process of "installing" the image stored on a remote server on to  a bare hardware client computer with little or no software initially on the hard disk, connected in a LAN  network. The image here refers to a “disk image” which contains OS along with its root file system and other partitions of the disk. Cloning refers to the process of obtaining the image from a computer client. 
+
+In a typical imaging solution for college labs, computers (clients attached to LAN) boot to the menu containing a list of available OS images, and the client chooses one among them to be deployed. The image is then deployed from the remote server on to the client machine, and the client reboots to the deployed OS. Lab administrators may first install an OS with required software on a computer and make an image of the system, which can then be placed in a storage server, and through this deployment process, it can be installed on all clients remotely. If any of the students corrupt the computers (clients), student needs to reboot the system and deploy the image again from the server for precise installation. 
 \vspace{0.5cm}
 
 \newpage
@@ -165,21 +181,21 @@ In each lab session, computers ( clients attached to LAN ) boot to the menu cont
 
 Web-Based Computer Lab Imaging with Grimiore \cite{Meek:2009:WBC:1629501.1629507} provides a web-based frontend for the disk imaging software Clonezilla. Grimoire allows administrators to restore and maintain an entire lab of computers, rather than a single computer or a single homogeneous image. Administrators can create a lab configuration for each use of the lab and restore them with a single option. Grimiore stores configuration data for each computer in each class, allowing lab configuration to contain heterogeneous images. Finally, Grimiore is web-based and provides administrative control over the entire imaging system, as well as user-level control over a single client computer.
 This project handles the management side of Clonezilla and does not focus on the implementation.
-\paragraph{}
-Network enters Highly-Efficient Management Solutions based on Intel PXE-
-Based on Remote Cloning System \cite{LiJinhui} uses PXE boot and multicast technology for cloning and imaging. The paper explains in detail about PXE technology, the basic protocols it supports, and the setting up of PXE enabled servers in the Windows2000.
-It uses Norton Ghost cloning software, which is now proprietary software. The tool supports multicast, i.e., sends the image once from the server for deployment to all the clients in the multicast session. Their system adopts an NTFS file system at the storage node as it provides a large capacity of file storage, making the storing of image files ( greater or equal to 4GB) more convenient. This work uses many proprietary software components to build the system, and the work is mostly based on how to set up and integrate Norton Ghost Multicast technology for cloning and imaging system with little or no focus on improving the existing system on multicasting of images through the network. It also does not mention the design of the image management system in a software view, i.e., various functionalities that provide for administrators and students.
-\paragraph{}
-Fog project \cite{fogproject} is an open-source cloning and image management solution. The administrator initiates image deployment on a single computer or multiple computers by means of a web interface \cite{wiki}. The client can choose and initiate image deployment using PXE(Preboot Execution Environment) \cite{PXE}. Regardless of the way of initiating the deployment, the client is booted from the PXE network, and the deployed image is downloaded from the remote server and deployed to client local hard disk through any one of the cloning utilities like partclone \cite{Partclone} or partimage \cite{Partimage} which are included in the tiny operating system. IPXE \cite{IPXE} software is used as the bootloader, which boots to a tiny Linux based operating system (minimal kernel and file system, which has image cloning utilities) downloaded from the network and deploys the image from storage node (remote server containing the images). It also supports both unicast and multicast ways of image deployment. Fog project achieves multicasting through Linux based tool called Udpcast. It does not support client-oriented image capture and saving of client files between imaging.
+
+Network enters Highly-Efficient Management Solutions based on Intel PXE-Based on Remote Cloning System \cite{LiJinhui} uses PXE boot and multicast technology for cloning and imaging. The paper explains in detail about PXE technology, the basic protocols it supports, and the setting up of PXE enabled servers in the Windows2000.
+It uses Norton Ghost cloning software, which is now a proprietary software. The tool supports multicast, i.e., sends the image once from the server for deployment to all the clients in the multicast session. Their system adopts an NTFS file system at the storage node as it provides a large capacity of file storage, making the storing of image files ( greater or equal to 4GB) more convenient. This work uses many proprietary software components to build the system, and the work is mostly based on how to set up and integrate Norton Ghost Multicast technology for cloning and imaging system with little or no focus on improving the existing system on multicasting of images through the network. It also does not mention the design of the image management system in a software view, i.e., various functionalities that provide for administrators and students.
+
+
+Fog project \cite{fogproject} is an open-source cloning and image management solution. The administrator initiates image deployment on a single computer or multiple computers by means of a web interface \cite{wiki}. The client can choose and initiate image deployment using PXE(Preboot Execution Environment) \cite{PXE}. Regardless of the way of initiating the deployment, the client is booted from the PXE network, and the deployed image is downloaded from the remote server and deployed to client local hard disk through any one of the cloning utilities like 'partclone' \cite{Partclone} or 'partimage' \cite{Partimage} which are included in the tiny operating system. IPXE \cite{IPXE} software is used as the bootloader, which boots to a tiny Linux based operating system (minimal kernel and file system, which has image cloning utilities) downloaded from the network and deploys the image from storage node (remote server containing the images). It also supports both unicast and multicast ways of image deployment. Fog project achieves multicasting through Linux based tool called 'UDPcast' \cite{udpcast}. It does not support client-oriented image capture and saving of client files between imaging.
 
 \subsection{\usefont{T1}{phv}{b}{it}Tools}
+Following are some important open-source tools used by similar imaging solution projects. 
 
+i) Partimage
 
-i) Partimage 
+Partimage is an open-source disk backup software. It saves partitions that have a supported file system on a sector basis to an image file. The image file is compressed to save disk space and transfer time and is split into multiple files. Partimage only copies data from the used portions of the partition, i.e., free blocks are not written to the image file. This is unlike other commands like 'dd', which also copy unused blocks. This increases the speed of image restoration and results in a more space-efficient backup. It does not support 'ext4' or 'btrfs' filesystems.
 
-Partimage is an open-source disk backup software. It saves partitions that have a supported file system on a sector basis to an image file. The image file is compressed to save disk space and transfer time and is split into multiple files. Partimage only copies data from the used portions of the partition, i.e., free blocks are not written to the image file. This is unlike other commands like 'dd,' which also copy unused blocks. This increases the speed of image restoration and results in a more space-efficient backup. It does not support 'ext4' or 'btrfs' filesystems.
-
-ii) Partclone 
+ii) Partclone
 
 It is an open-source software similar to Partimage. Partclone provides utilities to save and restore used blocks on a partition and is designed for higher compatibility of the file system by using existing libraries. It clones and images HDD with sparse images, i.e., only copies/writes used blocks. The used blocks are known by reading the superblocks. It also supports 'btrfs' and 'ext4' filesystem in addition to what Partimage supports. 
 For example, if partition size is 10 GB, but only 5 GB is used, Partclone or Partimage clones only 5 GB, i.e., creates sparse images. It can then deploy the image to a hard disk having space of at least 5 GB.
@@ -188,7 +204,7 @@ iii) Buildroot
 
 Buildroot is a simple, efficient, and easy-to-use tool to generate Linux systems. Buildroot is a tool that simplifies and automates the process of building a complete Linux system. It can be configured to build a Linux kernel image from the source, root filesystem containing only required packages, and bootloader for the target machine through cross-compilation. The target machine includes PowerPC processors, MIPS processors, ARM processors in addition to x86 machine. Hence, it is widely popular in building embedded Linux systems. 
 
-iv) IPXE
+iv) iPXE
 
 iPXE is one of the leading open-source network boot firmware. It provides a full PXE implementation enhanced with additional features such as boot from a web server via HTTP, boot from an iSCSI SAN, and boot from a wireless network. It partially supports local boot through sanboot functionality, which may not be compatible in all systems. iPXE is used by the FOG project to perform a network boot. The final feature is that it also has a very advanced scripting language and text-based menu system. These features enable one to make dynamic boot environments without the need to know a server-side scripting language like PHP, Perl, or Python.
 
@@ -197,14 +213,14 @@ v) GNU GRUB (GRand Unified Bootloader)
 
 GNU GRUB (short for GNU GRand Unified Bootloader, commonly referred to as GRUB) is a boot loader package from the GNU Project. GNU GRUB is a Multiboot boot loader. It is predominantly used for booting Unix-like systems. It provides extensive local boot/HDD boot functionalities and also supports network booting. 
 
-Briefly, a boot loader is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the operating system kernel software (such as Linux). The kernel, in turn, initializes the rest of the operating system (e.g., Ubuntu). GRUB version 2 is a multi-stage bootloader. First, core.img is loaded to main memory by diskboot.img, which is loaded by boot.img,  in MBR partitioned disk. Core.efi is loaded to memory in UEFI firmware computers by /efi/<distro>/grubx64.efi present in EFI system partition. The core image then loads other necessary modules such as normal.mod, which helps in parsing the GRUB configuration file (grub.cfg). The grub.cfg contains the location of kernels, initramfs along with their boot parameters, GRUB parses the file and executes the commands in the configuration file. It also has an excellent scripting language and text-based menu system.
+Briefly, a boot loader is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the operating system kernel software (such as Linux). The kernel, in turn, initializes the rest of the operating system (e.g., Ubuntu). GRUB version 2 is a multi-stage bootloader. First, core.img is loaded to main memory by diskboot.img, which is loaded by boot.img,  in MBR partitioned disk. Core.efi is loaded to memory in UEFI firmware computers by /efi/"OS name"/grubx64.efi present in EFI system partition. The core image then loads other necessary modules such as normal.mod, which helps in parsing the GRUB configuration file (grub.cfg). The grub.cfg contains the location of kernels, initramfs along with their boot parameters, GRUB parses the file and executes the commands in the configuration file. It also has an excellent scripting language and text-based menu system.
 
-GRUB also consists of utilities such as grub-mkconfig - helps in detecting the OS(s) in HDD and create grub.cfg, grub-mkimage - creates core image from the built GRUB modules, grub-mknetdir - prepares a GRUB netboot directory required for network boot. Hence, GRUB supports boot from local HDD and as well as network boot. GRUB is compatible with almost all target systems - BIOS, UEFI, x86\_32, x86\_64, PowerPC. It also supports booting from HTTP in addition to the TFTP server.
+GRUB also consists of utilities such as 'grub-mkconfig' which helps in detecting the OS(s) in HDD and creates 'grub.cfg'. It has 'grub-mkimage' which creates core image from the built GRUB modules. It has 'grub-mknetdir' which helps to prepare a GRUB netboot directory required for network boot. Hence, GRUB supports boot from local HDD and as well as network boot. GRUB is compatible with almost all target systems - BIOS, UEFI, x86\_32, x86\_64, PowerPC. It also supports booting from HTTP in addition to the TFTP server.
 
 \subsection{\usefont{T1}{phv}{b}{it} Outcome of Literature Survey}
 In labs, the requirement is to have different OS/software or both for each lab session. Hence there is a need for frequent imaging, and sometimes the same set of OS/software is needed multiple times. For example, subject A requires specific software and OS, and during each session of subject A lab, that particular OS image needs to be installed and used, i.e., the same image is being used by the subject A lab periodically. Fog project always downloads the image through the network and deploy it. It does not exploit the fact that the same image is being reused periodically to optimize image transfer from the network, i.e., does not have a cache-like mechanism to prevent re-downloading of the same image.
 
-None of them allows the client to capture its image for further use, as it would increase the storage size on the storage node. Also,  the projects do not provide any mechanism for client files to be saved between imaging, i.e., the work done by the client in the lab persists until the next imaging takes place. Fog provides only provides some scalability mechanism to handle the deployment of images to a large number of clients.  
+None of them allows the client to capture its image for further use, as it would increase the storage size on the storage node. Also,  the projects do not provide any mechanism for client files to be saved between imaging, i.e., the work done by the client in the lab persists until the next imaging takes place. Fog project only provides some scalability mechanisms to handle the deployment of images to a large number of clients.  
 
 Partclone supports cloning for more file systems than the partimage. Both of them support cloning and imaging of only used portions of partition, unlike 'dd' command. They can create a clone and deploy a larger partition image to a smaller partition space but with inconsistency. It needs to be used along with a partitioning tool to resize the partition.
 
@@ -214,21 +230,21 @@ GRUB has greater functionality in booting from local HDD, good scripting languag
 
 \subsection{\usefont{T1}{phv}{b}{it}Problem Statement}
 % The aim is to design and develop an efficient OS image cloning and deployment system where bare-metal client systems can boot from remote OS images
-To design and develop an efficient and simple remote OS image cloning and deployment image managment system for bare-metal computers and virtual machines.
+To design and develop an efficient and simple remote OS image cloning and deployment management system for bare-hardware computers and virtual machines.
 \subsection{\usefont{T1}{phv}{b}{it}Objectives}
 \begin{enumerate}
-\item To deploy remote OS images  on bare hardware machine client.
-\item To support Client driven deployment, i.e., the client has the ability to choose the required image to be deployed
-\item To develop a user interface for the administrator to manage remote OS image capture and deployment
-\item To optimize the process of remote OS image capture in terms of space and time
-\item To develop a mechanism for time optimized large scale frequent unicast and multicast  deployment of remote OS images 
-\item To develop an open-source software product
+\item To deploy remote OS images on bare hardware machine client.
+\item To support Client driven deployment, i.e., the client has the ability to choose the required image to be deployed.
+\item To develop a user interface for the administrator to manage remote OS image capture and deployment.
+\item To optimize the process of remote OS image capture (clone) in terms of space and time.
+\item To develop a mechanism for time optimized large scale frequent unicast and multicast  deployment of remote OS images.
+\item To develop an installable and configurable software product.
 \end{enumerate}
 
 
 \newpage
 \section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Requirements}
-We have identified the necessary requirements for Remote OS cloning and image deployment system to be functional as a product that can be used for labs. We have classified the requirements as user and system requirements, user requirements are summarised in the use case diagram in fig 3.1
+We have identified the necessary requirements for Remote OS image management system (ROSIM) to be functional as a product that can be used for labs. We have classified the requirements as user and system requirements, user requirements are summarised in the use case diagram in fig 3.1
 \subsection{\usefont{T1}{phv}{b}{it}Product Perspective}
 This project is designed for making the process of maintaining computers in a lab easy. The lab administrator can control the deployment of OS images to all the lab computers through a central system instead of manually configuring in each system. Different lab sessions may have different software requirements. Hence the administrator can install the requirements in an OS and deploy that OS image to all the systems efficiently. The lab users can also select which OS they want to use, and that OS will be fetched and deployed.
 \subsection{\usefont{T1}{phv}{b}{it}Product functions}
@@ -247,7 +263,7 @@ The different types of users who can use this product are:
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{i1.png}
-    \caption{Use Case diagram of the system}
+    \caption{ A simple use case diagram of the system}
     \label{fig:Use case}
     \small
     ( Student chooses the image to be deployed from the central server or local harddisk
@@ -291,24 +307,28 @@ The different types of users who can use this product are:
 
 \section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Methodology}
 % Remote OS cloning and image deployment system orchestrates the image deployment through the collection of server interaction without any initial client software except for PXE enabled client, i.e., bare-metal client. 
-Image cloning and deployment can be done in two ways, through network orchestrated image deployment on the bare-metal client or through software from inside the OS. It is difficult to clone the disk from inside the existing  OS of the client as \\
-i)it requires the file system to be unmounted \\
-ii) also, image deployment from within existing OS in the client will lead to inconsistencies. \\
-iii) will not be able to control the image deployment remotely.\\
-So the bare-metal client is used for imaging. The following problems arise when the image needs to  deployed on-the-fly to the bare-metal client:\\
-i) How to boot the client from network \\
-ii) How to deploy an image if no imaging software is present in the client \\
-iii) How to deploy OS image to client from remote computer \\
-Remote OS cloning and image deployment system orchestrates the image deployment through the collection of server interaction without any initial client software except for PXE enabled client, i.e., bare-metal client. The required software such as bootloader and the image deployment tool is loaded from network to memory through PXE booting.
+Image cloning and deployment can be done in two ways, through network orchestrated image deployment on the bare hardware client or through software from inside the OS. It is difficult to clone the disk from inside the existing  OS of the client as 
+\begin{enumerate}[label=\roman*.]
+ \item It requires the file system to be unmounted 
+ \item Also, image deployment from within existing OS in the client will lead to inconsistencies. 
+  \item Will not be able to control the image deployment remotely.
+ \end{enumerate}
+So the network orchestrated image deployment on the bare hardware client is used for imaging. The following problems arise when the image needs to deployed on-the-fly to the bare-metal client:
+\begin{enumerate}[label=\roman*.]
+ \item How to boot the client from network ? 
+ \item How to deploy an image if no imaging software is present in the client ?
+\item How to deploy OS image to client from remote computer ?
+\end{enumerate}
+ROSIM orchestrates the image deployment through the collection of server interaction without any initial client software except for PXE enabled client, i.e., bare hardware client. The required software such as bootloader and the image deployment tool is loaded from network to memory through PXE booting.
 \subsection{\usefont{T1}{phv}{b}{it} PXE Boot}
-PXE ( Preboot Execution Environment) technology allows a client to boot from a network loaded operating system through support of PXE enabled servers. PXE technology is firmware that supports industry-standard Internet protocols, namely UDP/IP, DHCP and, TFTP. It is present in all Intel-based computers, but it needs to be PXE enabled and connected through LAN cable to a network containing PXE enabled servers. 
+PXE ( Preboot Execution Environment) technology allows a client to boot from a network loaded operating system through support of PXE enabled servers. PXE technology is firmware that supports industry-standard Internet protocols, namely UDP/IP, DHCP and, TFTP. It is present in all Intel-based computers \cite{pxe_intel}, but it needs to be PXE enabled and connected through LAN cable to a network containing PXE enabled servers. 
 PXE enabled servers to refer to a set of servers that support PXE client specifically for PXE boot. It contains the following components summarised in fig 4.1 : 
-\begin{enumerate}
+\begin{enumerate}[label=\roman*.]
  \item DHCP server: It assigns the IP address to LAN PXE client, gives the name of the boot file and location (IP address) of the TFTP server to access it in addition to normal DHCP servers which only assigns the IP address.
- \item  TFTP server: It stores boot files (bootloader and OS), which  PXE client downloads after IP assignment. TFTP is used be because it is easily implemented in the client's NIC firmware, resulting in standardized small-footprint PXE ROMs
+ \item  TFTP server: It stores boot files (bootloader and OS), which  PXE client downloads after IP assignment. TFTP is used because it is easily implemented in the client's NIC firmware, resulting in standardized small-footprint PXE ROMs
  \item  Network Bootloader and OS: A Network bootloader to be able to boot a tiny network OS from the network ( Contains the image cloning and deployment tools). Both of them are present on the TFTP server.
  \end{enumerate}
- The PXE client network boots by connecting to a network and requests an IP address and the location of the bootloader. The DHCP server assigns an IP address and sends a boot file name along with the IP address of the TFTP server. The PXE client then retrieves the GRUB modules from the TFTP server and loads GRUB, the GRUB boots, into a tiny operating system located on the TFTP server.
+ The PXE client network boots by connecting to a network and requests an IP address and the location of the bootloader. The DHCP server assigns an IP address and sends a boot file name along with the IP address of the TFTP server. The PXE client then retrieves the GRUB modules from the TFTP server and loads GRUB, the GRUB boots, into a tiny operating system (called IDOS, refer section 5.3) located on the TFTP server.
  \begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{basicsysarch.pdf}
@@ -321,16 +341,12 @@ PXE enabled servers to refer to a set of servers that support PXE client specifi
 % \captionof{figure}{Basic System Architecture} 
 \subsection{\usefont{T1}{phv}{b}{it} Remote Image cloning and Deployment System}
   The network booted OS contains tools for cloning and imaging. A storage server is needed to store cloned images. It is used in the fast transfer of images from the server to the client during deployment and from client to server during cloning.
-  The tiny operating system displays a menu ( if its not deployed by the admin ) of available images on the storage server, and when a choice is made by the client, that particular image is downloaded from the storage server and then deployed. Then the system reboots directly to the deployed image. A web interface is designed to handle all the operations at the admin side.
+  The tiny operating system displays a menu ( if it's not deployed by the admin ) of available images on the storage server, and when a choice is made by the client, that particular image is downloaded from the storage server and then deployed. Then the system reboots directly to the deployed image. A web interface is designed to handle all the operations at the admin side.
   The entire workflow is summarised in flowchart fig 4.2
   \newline
-%\\
-%  \includegraphics[page=1, trim = 18mm 80mm 18mm, clip, width=14.35cm]{Workflow.pdf}
-%  \\
-%  \\
-%  \\
+
 \subsection{\usefont{T1}{phv}{b}{it} Image cloning and deployment management}
-Image cloning and deployment management are done using a web application. Through the web application, the user (admin/student) can perform tasks like cloning, image deployment to any of the listed clients present in the database. For e.g., the user chooses one of the clients, creates an image deployment task by selecting one of the available images in the storage server. The tasks created are stored in the database, and when the client is up, the client IDOS communicates with the web app to check if there is any task to be performed on it using suitable APIs. If there exists any task for it, IDOS performs the task on that client, and on successful completion of the task, the client signals task completion to the web server, after which the webserver removes the task from the database. If no assigned task exists, the client-driven image cloning/deployment is done. The flowchart fig \ref{fig:detailed design} summarizes the working of image deployment through a web application as well as client-driven deployment.
+Image cloning and deployment management are done using a web application. Through the web application, the user (admin/student) can perform tasks like cloning, image deployment to any of the listed clients present in the database. For e.g., the user chooses one of the clients, creates an image deployment task by selecting one of the available images in the storage server. The tasks created are stored in the database, and when the client is up, the client IDOS communicates with the web app to check if there is any task to be performed on it using suitable APIs. If there exists any task for it, IDOS performs the task on that client, and on successful completion of the task, the client signals task completion to the web server, after which the web server removes the task from the database. If no assigned task exists, the client-driven image deployment is done. The flowchart fig \ref{fig:detailed design} summarizes the working of image deployment through a web application as well as client-driven deployment.
 \subsection{\usefont{T1}{phv}{b}{it}Detailed Design methodology}
 The previous section described the design of system architecture, which fulfills the basic requirements of the system. This section discusses how to include other desired requirements in the design of the project. This includes how to design an automated image deployment system using GRUB  and design the cache mechanism to lower the network traffic, hence improve the performance of the system.
 \subsubsection{\usefont{T1}{phv}{b}{it}Booting from local HDD using Network GRUB  }
@@ -352,39 +368,44 @@ As stated in section 2, an image is reused periodically.  Instead of downloading
 A simple cache mechanism is developed where a portion of local HDD called hidden partition (usual, the end of the disk) is reserved for storing the compressed OS image as cache. Whenever a choice of image is made, the IDOS checks if the image is present in the cache. If the image is not present, it downloads the image from the NFS server into the cache ( if enough space is available, it is downloaded. If not, it does not download to the cache rather directly deploys to local HDD. This problem can be solved by adopting a suitable cache replacement mechanism ) and then deploys the image from the cache. If the image is already present in the cache, it deploys from the cache without downloading, thereby decreasing the network traffic. This workflow is summarised in fig \ref{fig:detailed design}.
 
 \subsubsection{\usefont{T1}{phv}{b}{it} Supporting Image deployment on existing OS(s) system and Multi-booting}
-In the earlier works, OS image deployment led to the erasing of existing OS(s) from the HDD as the deployment was overwriting the existing partitions. The feature to multi-boot the system after image deployment with existing OS(s) has two problems: \\ 
-i) Disturbing the existing OS(es) during image deployment and \\
-ii) Detect multiple Operating Systems existing on HDD and able to boot to them using a bootloader.
-
+In the earlier works, OS image deployment led to the erasing of existing OS(s) from the HDD as the deployment was overwriting the existing partitions. The feature to multi-boot the system after image deployment with existing OS(s) has two problems: 
+\begin{enumerate}[label=\roman*.]
+    \item  Disturbing the existing OS(es) during image deployment and 
+    \item Detect multiple Operating Systems existing on HDD and able to boot to them using a bootloader.
+\end{enumerate}
 To not disturb existing OS(es) while image deployment, two solutions are possible:
-i)one is to image to free space and \\
-ii)Delete any partition or resize the partitions to free space.\\
+\begin{enumerate}[label=\roman*.]
+    \item To image to free space, or,
+     \item Delete any partition or resize the partitions to free space.
+\end{enumerate}
+
 Solution i) is more elegant than the other, and so was implemented. Please refer to this in section 5.5. This method is limited when there is no enough free space for imaging.
 
-After OS image deployment, the bootloader needs to identify the deployed OS and also the existing OS(es). The bootloader present on HDD knows only about existing OS(es) and not deployed image. Also, it is difficult to locate the bootloader in HDD to communicate the new imaged OS. The use of grub-utilities and the network GRUB, to identify and load multi-boot OSes.
+After OS image deployment, the bootloader needs to identify the deployed OS and also the existing OS(es). The bootloader present on HDD knows only about existing OS(s) and not deployed image. Also, it is difficult to locate the bootloader in HDD to communicate the new imaged OS. The use of grub-utilities and the network GRUB, to identify and load multi-boot OS(s).
 
 \subsubsection{\usefont{T1}{phv}{b}{it} Multicast Image Deployment}
-Concurrent unicast image deployment will lead to many copies of same image being delivered in the network link between the storage server and the deployed clients. This overloads the network and increases the time for concurrent image deployment. To solve, this we propose multicasting of image to be deployed from the storage server and this is workflow is managed by centralised web server.
+Concurrent unicast image deployment will lead to many copies of same image being delivered in the network link between the storage server and the deployed clients. This overloads the network and increases the time for concurrent image deployment. To solve this, we propose multicasting of image to be deployed from the storage server and this workflow is managed by the centralized web server.
 
 Internet Protocol (IP) multicast is a bandwidth-conserving technology that reduces traffic by simultaneously delivering a single stream of information to many clients. Multicast is based on the concept of a group. An arbitrary group of receivers expresses an interest in receiving a particular data stream. Hosts that are interested in receiving data flowing to a particular group must join the group using Internet Group Management Protocol (IGMP). There are two design challenges in implementing the multicast for image deployment:
- \begin{itemize}
-     \item Synchronise all the clients to which same image needs in  to deployed with the storage server.
+ \begin{enumerate}[label=\roman*.]
+
+     \item Synchronize all the clients to which same image needs in to deployed with the storage server.
      \item Allow simultaneous multiple multicast sessions by storage server to different group of clients.
- \end{itemize}
+ \end{enumerate}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{Multicasting.pdf}
-    \caption{Sequence diagram of Multicasting in ROSIM}
+    \caption{Sequence diagram of Multicast image deployment in ROSIM}
     \label{Multicast_seq}
 \end{figure}
 
-The first challenge is solved by using centralised web server to manage the multicast i.e. communicate with clients and storage and in synchronising them. The sequence diagram Fig. \ref{Multicast_seq} summarises how the multicast session is created and deployed through the use of web server. The admin creates a multicast deployment task for group of 'x' clients for 'y' image deployment through the web application. The web application informs the task to storage server which in turn allocates this task with multicast group address and port for that task. The second challenge is solved by dynamically allocating the multicast group address and port for each task such that it is unique with respect to the one being used by other groups. The clients when boots asks for tasks and web server provides with the multicast address and port. The clients belonging the multicast session group join to multicast session by using the multicast address and port. Once, all the clients join, the multicast session begins and image is deployed to all the clients of the group. Finally, the clients and storage server sends status of completion to web management server.
+The first challenge is solved by using centralised web server to manage the multicast i.e. communicate with clients and storage and in synchronizing them. The sequence diagram fig. \ref{Multicast_seq} summarises how the multicast session is created and deployed through the use of web server. The admin creates a multicast deployment task for group of 'x' clients for 'y' image deployment through the web application. The web application sends the task to storage server which in turn allocates this task with multicast group address and port for that task. The second challenge is solved by dynamically allocating the multicast group address and port for each task such that it is unique with respect to the one being used by other groups. The clients when boots, asks for tasks and the web server provides with the multicast address and port. The clients belonging to the multicast session group join to multicast session by using the multicast address and port. Once, all the clients join, the multicast session begins and image is deployed to all the clients of the group. Finally, the clients and storage server sends the status of completion to the web management server.
 
 % multiple session ss put and refer
 
 \subsubsection{\usefont{T1}{phv}{b}{it} Web application and Database Design}
-Web application is designed to provide user interface for image management by admins and other users, in addition to image deployment interface present in the IDOS at client-side. The database design of ROSIM is shown as ER diagram in Fig. \ref{DB}. 
+Web application is designed to provide user interface for image management by admins and other users, in addition to image deployment interface present in the IDOS at client-side. The database design of ROSIM is shown as ER diagram in fig. \ref{DB}. 
 \begin{figure}[]
     \centering
     \includegraphics[width=\linewidth]{DB.pdf}
@@ -393,25 +414,25 @@ Web application is designed to provide user interface for image management by ad
 \end{figure}
 Web application with database (DB) is designed as follows:
 \begin{itemize}
-    \item Cloning, unicast and multicast image deployment are generalised as tasks. Each client is constrained to be associated with only one task at a given time, where as one or more clients (in case of multicast) might be  associated with one task.
-    \item The metadata of the images cloned such as OS image name, sizes - compressed size and disk size i.e. actual uncompressed size of cloned disk are stored in ImageRepository.
-    \item Settings contains the configuration details of all servers. It is intended for easier change of settings when a server configuration is changed and needs to be notified to Web application. These settings are also used in installation and configuration of other ROSIM components (except of Web server itself).
+    \item Cloning, unicast and multicast image deployment are generalized as tasks. Each client is constrained to be associated with only one task at a given time, where as one or more clients (in case of multicast) might be  associated with one task.
+    \item The metadata of the images cloned such as OS image name, sizes - compressed size and disk size i.e. actual uncompressed size of cloned disk are stored in Image Repository.
+    \item Settings contains the configuration details of all servers. It is intended for easier change of settings when a server configuration is changed and needs to be notified to Web application. These settings are also used in installation and configuration of other ROSIM components (except for Web server itself).
     %mention about deployment mode
 \end{itemize}
 \subsubsection{\usefont{T1}{phv}{b}{it} Proxy DHCP based PXE booting}
-The PXE booting environment is designed so it can be seamlessly integrated with an already in place DHCP and TFTP server infrastructure. This design goal presented a challenge when dealing with the classic DHCP protocol. Institution or corporate DHCP servers are usually subject to strict policies preventing the DHCP be modified for PXE booting and in many cases one might not have access to change DHCP configuration. Due to this reason the PXE standard developed the concept of DHCP redirection or "proxy DHCP". The idea behind a proxy DHCP as per Intel PXE boot specification \cite{pxe_intel} is to split the PXE DHCP requirements in two independently run and administered server units as shown in Fig. \ref{proxydhcp} and explained as follows:
+The PXE booting environment is designed that, it can be seamlessly integrated with an already in place DHCP and TFTP server infrastructure. This design goal presented a challenge when dealing with the classic DHCP protocol. Institution or corporate DHCP servers are usually subject to strict policies preventing the DHCP be modified for PXE booting and in many cases one might not have access to change DHCP configuration. Due to this reason the PXE standard developed the concept of DHCP redirection or "proxy DHCP". The idea behind a proxy DHCP as per Intel PXE boot specification \cite{pxe_intel} is to split the PXE DHCP requirements in two independently run and administered server units as shown in fig. \ref{proxydhcp} and explained as follows:
 \begin{itemize}
     \item The classic DHCP server providing IP address, subnet mask, etc. to all DHCP clients (PXE and non-PXE).
     \item The proxy DHCP server provides TFTP server IP address and name of bootloader (Network GRUB) file only to PXE-clients at booting.
 \end{itemize}
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{proxydhcp.pdf}
+    \includegraphics[width=0.85\linewidth]{proxydhcp.pdf}
     \caption{Proxy DHCP based PXE booting}
     \label{proxydhcp}
 \end{figure}
 
-The basic architecture as shown in Fig. \ref{sys_arch} remains same for PXE booting except of one DHCP server, there will be two DHCP servers, one being normal and other a Proxy DHCP server as shown in Fig. \ref{proxydhcp}. In summary, proxy DHCP is a very nice way to non-invasively implement PXE netbooting in environments where one is not technically or administratively capable of modifying the DHCP server(s) running in the environment.
+The basic architecture as shown in fig. \ref{sys_arch} remains same for PXE booting but instead of one DHCP server, there will be two DHCP servers, one being normal and other a proxy DHCP server as shown in fig. \ref{proxydhcp}. In summary, proxy DHCP is a very nice way to non-invasively implement PXE netbooting in environments where one is not technically or administratively capable of modifying the DHCP server(s) running in the environment.
     
 % \newpage
 % \section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Results and Analysis}
@@ -421,15 +442,16 @@ The basic architecture as shown in Fig. \ref{sys_arch} remains same for PXE boot
 % \section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Conclusion \& Future Work}
 \newpage
 \section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Work Done}
-In this semester we developed the proof of concept of the design through a prototype. We first implemented the PXE boot and then worked on remote cloning and image deployment system. The prototype consists of various components as discussed in the following subsections. It currently supports cloning and imaging in legacy BIOS computers and partially UEFI computers. 
+In this semester we developed the proof of concept of the design through a prototype. We first implemented the PXE boot and then worked on remote cloning and image deployment system. The prototype consists of various components as discussed in the following subsections. It currently supports cloning and imaging in legacy BIOS computers and UEFI computers. 
 \subsection{\usefont{T1}{phv}{b}{it} Setting up of Servers}
 As discussed in section 3, to implement the PXE boot and storage server, we require DHCP, TFTP server and NFS server. It was setup as follows:
-\begin{enumerate}
-    \item TFTP server: 'tftpd-hpa' package is used to create the TFTP server. It is configured to share  “/tftpboot” directory with read and write access, from which the client can fetch the file from TFTP and also can put the file into TFTP server/ "/tftpboot" directory. The directory contains  GRUB core image and modules for different platforms (BIOS,  UEFI x86\_32, UEFI x86\_64 ), IDOS image. The TFTP server supplies the corresponding GRUB to the PXE client, as requested by the PXE client. The client then loads the bootloader and further downloads the IDOS image and boots to IDOS. TFTP server is containerized and deployed on Ubuntu 18.04.
+\begin{enumerate}[label=\roman*.]
+    \item DHCP server: 'isc-dhcp-server' package is used to setup the DHCP server. It is configured to provide the TFTP server IP, bootfile name in addition to the IP, gateway IP to PXE-clients. It only provides IP address, gateway IP etc, to non-PXE-clients.
+    \item TFTP server: 'tftpd-hpa' package is used to create the TFTP server. It is configured to share  “/tftpboot” directory with read and write access, from which the client can fetch the file from TFTP and also can put the file into TFTP server's "/tftpboot" directory. The directory contains  GRUB core image and modules for different platforms (BIOS,  UEFI x86\_32, UEFI x86\_64 ), IDOS image. The TFTP server supplies the corresponding GRUB to the PXE client, as requested by the PXE client. The client then loads the bootloader and further downloads the IDOS image and boots to IDOS. TFTP server is containerized and deployed on Ubuntu 18.04.
     \item  NFS server: 'nfs-kernel-server' package is configured to share “/nfsroot” directory with mount options to all computers in the same network. The "/nfsroot" directory contains the cloned images, automated cloning and image deployment scripts, and the GRUB utilities. On boot of IDOS, IDOS mounts the NFS server, and then it executes the automated clone and image deployment script. NFS server is set up on Ubuntu-18.04. 
 \end{enumerate}
 \subsection{\usefont{T1}{phv}{b}{it} Network GRUB}
-Network bootable GRUB is built from the source \cite{GRUB}. Blog \cite{PXEb} provides the information on building network bootable GRUB and how to PXE boot using this GRUB. GRUB utilities - 'grub-mkimage' and 'grub-mknetdir' are used to build core and network bootable GRUB modules, respectively. Currently, the GRUB-2.02 version is used for the project. Network GRUB consists of a core image and various modules which are placed in the TFTP server. PXE client first loads the core image, and control is handed over to core GRUB, which subsequently downloads the required modules. The modules are loaded from the TFTP server as and when that functionality is required. Suppose to read the HDD, and the GRUB core downloads the part\_msdos and ext4/ntfs modules. The GRUB bootloader is platform-specific, i.e., needs different GRUB builds for different firmware clients. The i386-pc, x86\_32-efi and x86\_64-efi, GRUB builds correspond to BIOS,  UEFI x86\_32 and UEFI x86\_64 PXE clients. Depending upon the type of client, the DHCP sends the location of these builds. Once GRUB is loaded, it boots to either network loaded IDOS or from local HDD depending on the selection by the user in the GRUB menu, as shown in Fig \ref{grub}. 
+Network bootable GRUB is built from the source \cite{GRUB}. Blog \cite{PXEb} provides the information on building network bootable GRUB and how to PXE boot using this GRUB. GRUB utilities - 'grub-mkimage' and 'grub-mknetdir' are used to build core and network bootable GRUB modules, respectively. Currently, the GRUB-2.02 version is used for the project. Network GRUB consists of a core image and various modules which are placed in the TFTP server. PXE client first loads the core image, and then control is handed over to core GRUB, which subsequently downloads the required modules. The modules are loaded from the TFTP server as and when that functionality is required. Suppose in order to read the HDD, the GRUB core downloads the part\_msdos and ext4/ntfs modules which are required for reading the HDD. The GRUB bootloader is platform-specific, i.e., it needs different GRUB builds for different firmware clients. The i386-pc, x86\_32-efi and x86\_64-efi, GRUB builds correspond to BIOS,  UEFI x86\_32 and UEFI x86\_64 PXE clients. Depending upon the type of client, the DHCP sends the location of these builds. Once GRUB is loaded, it boots to either network loaded IDOS or from local HDD depending on the selection by the user in the GRUB menu, as shown in fig \ref{grub}. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{grub.png}
@@ -437,9 +459,9 @@ Network bootable GRUB is built from the source \cite{GRUB}. Blog \cite{PXEb} pro
     \label{grub}
 \end{figure}
 
-Booting from HDD using GRUB is achieved by generating GRUB configuration (grub.cfg) after the image is deployed by using the GRUB utility termed as 'grub-mkconfig'. The 'grub-mkconfig' scans the HDD for OS(s) and generates a 'grub.cfg' which contains the location of Linux kernels and initramfs in case of Linux and chain bootloader in case of Windows. Currently, this project supports the only detection of Linux based OS through 'grub-mkconfig' and hence supports only Linux based OS booting from local HDD.
+Booting from HDD using GRUB is achieved by generating GRUB configuration (grub.cfg) after the image is deployed by using the GRUB utility termed as 'grub-mkconfig'. The 'grub-mkconfig' scans the HDD for OS(s) and generates a 'grub.cfg' which contains the location of Linux kernels and initramfs in case of Linux and chain bootloader in case of Windows. Currently, this project supports only the detection of Linux based OS through 'grub-mkconfig' and hence supports only Linux based OS booting from local HDD.
 \subsection{\usefont{T1}{phv}{b}{it} IDOS (Image Deployment OS) }
-IDOS is a Linux-kernel 5.1 based operating system developed from source using a tool called  Buildroot\cite{buildroot}. The tool helps in building the Linux kernel from scratch with only the required packages/tools such as 'mke2fs', parted as discussed further in this subsection. Partclone tool which helps in cloning and imaging sparse images is integrated into Buildroot as an external package. To integrate the Partclone package in Buildroot, additional config files are added to Buildroot, which assists the Buildroot in building the package from the sourcehttps://web.archive.org/web/20140708032547/http://download.intel.com/design/archives/wfm/downloads/pxespec.pdf and integrating it to the root filesystem of IDOS.
+IDOS is a Linux-kernel 5.1 based operating system developed from source using a tool called  Buildroot\cite{buildroot}. The tool helps in building the Linux kernel from scratch with only the required packages/tools such as 'mke2fs', 'parted' as discussed further in this subsection. Partclone tool which helps in cloning and imaging sparse images is integrated into Buildroot as an external package. To integrate the Partclone package in Buildroot, additional config files are added to Buildroot, which assists the Buildroot in building the package from the source and integrating it to the root filesystem of IDOS.
 
 \begin{figure}[h!]
     \centering
@@ -460,63 +482,70 @@ IDOS is a Linux-kernel 5.1 based operating system developed from source using a 
     \label{partclone}
 \end{figure}
 
-IDOS is loaded by the GRUB from the TFTP server in bzImage format and boots, as shown in Fig \ref{b_IDOS} . The IDOS displays the menu of available images from the mounted NFS-server using a dialog tool, as shown in Fig \ref{Menu}. Depending upon the selection of image, that image is downloaded in compressed form by the client machine using copy (cp command) if it is already not cached. It then uncompresses the image using gzip and then deploys it on to local HDD using Partclone. Before displaying the menu items, the IDOS checks if there exists a hidden partition. If not, a partition is created at the end of the HDD by reserving a space of size equal to 20\% of the total size of HDD using the 'parted' tool. It then formats using the 'mke2fs' tool and mounts the partition and copies the partition table to the NFS server. Then it displays the menu entries. Before downloading the chosen image, it checks whether the image is locally present by comparing the md5sum of images present in the hidden partition and that of the selected image in the NFS server. If locally present, it does not download the image again. Instead, it deploys the local image present to HDD using the Partclone tool, as shown in Fig \ref{partclone}.
+IDOS is loaded by the GRUB from the TFTP server in bzImage format and boots, as shown in fig \ref{b_IDOS} . The IDOS communicates with web application to get the tasks if assigned and does the task (cloning or deployment accordingly), If no task exists, it does client-driven image deployment by displaying the menu of available images from the mounted NFS-server using a dialog tool, as shown in fig \ref{Menu}. Depending upon the selection of image, that image is downloaded in compressed form by the client machine using copy (cp command) if it is already not cached. It then uncompresses the image using 'gzip' and then deploys it on to local HDD using Partclone. Then it displays the menu entries. Before downloading the chosen image, it checks whether the image is locally present by comparing the md5sum of images present in the hidden partition (if no hidden partition present, a formatted partition is created at the end of the HDD by reserving a space of size equal to 15-20\% of the total size of HDD) and that of the selected image in the NFS server. If locally present, it does not download the image again. Instead, it deploys the local image present to HDD using the Partclone tool, as shown in fig \ref{partclone}.
 
 Logging for each client is done and is stored on the NFS server. Logs contain the status of image deployment and client machine hardware information. The above-automated deployment is possible with a collection of scripts located at the NFS server, which uses necessary tools and commands. These scripts are run as part of the initialization process of IDOS.
 
 \subsection{\usefont{T1}{phv}{b}{it} Experimental Setup}
-DHCP and TFTP server is set up on one computer, and the NFS server is set up on the second computer. All the servers are set up on Ubuntu-18.04 OS. Along with the servers, three client computers were connected to Cat V network switch through cat 5e and cat 6 ethernet cables to form a LAN. LAN setup was common to both client setups. Clients are used as bare metal clients, i.e., no initial software installation is needed in both the client setup.
-Two types of clients setup were done to test the proof of concept :
+%  Three client computers were connected to Cat V network switch through cat 5e and cat 6 ethernet cables to form a LAN. 
+ The ROSIM was deployed on two experimental setups and tested. Clients used are bare hardware clients, i.e., no initial software installation is needed in both the setup.
+Two types of setup were done to test the proof of concept and for results :
+\begin{enumerate}[label=\roman*.]
+    \item  VM clients: DHCP, TFTP, NFS, web server are set up on one computer (laptop) on Ubuntu-18.04 OS. Three computers (laptops, including the servers setup laptop) are connected to home network router (77VR1 beetel) using cat 6 cables.  One VM client per host of required configuration (memory, HDD, processor, network boot option) is spawned on three host machines. The VM is connected to the LAN interface of the host through a bridge adapter. Bridge adapter allows VMs to communicate with the above LAN setup in the same way as the host computer. This was useful for development as well as testing the prototype in the initial phase and was used to test Multicast image deployment. The results of the Table \ref{cloning_time}, Table \ref{multicast_table} are obtained from this setup.
+    \item Computer clients: DHCP and TFTP server is set up on one computer, and the NFS server is set up on the second computer. All the servers are set up on Ubuntu-18.04 OS. Three client computers along  with servers are connected to Cat V network switch through cat 5e and cat 6 ethernet cables to form a LAN. Computers are made PXE-enabled, and network boot option is set as the first boot option. The setup included both BIOS and UEFI computer clients. The results of the Table \ref{imaging} are obtained from this setup.
 
-i) Cloning and Imaging in VM clients: One VM client per host of required configuration (memory, HDD, processor, network boot option) is spawned on three host machines. The VM is connected to the LAN interface of the host through a bridge adapter. Bridge adapter allows VMs to communicate with the above  LAN setup in the same way as the host computer. This was useful for development as well as testing the prototype in the initial phase.
+\end{enumerate}
+ 
 
-ii) Computer clients: Computers are made PXE-enabled, and network boot option is set as the first boot option. The setup included both BIOS and UEFI computer clients. Three computer clients were used for this purpose.
 
 \subsection{\usefont{T1}{phv}{b}{it} Supporting image deployment on existing OS(s)}
 As mentioned in section 4.4.3, imaging is done on free space. Firstly, 
-mber of partitions are created on HDD, and currently, this work supports 'MSDOS' and 'GPT' \cite{GPT} partition tables. In the 'MSDOS' partition table present in MBR \cite{MBR}, the number of 'primary' partitions are tracked so that it does not go above three partitions and if more partitions are required, they are made as 'logical' partitions in 'extended' partition. Most BIOS legacy systems use the 'MSDOS' partition table, and UEFI systems use the 'GPT' partition table. So, now the image deployment system supports both BIOS \cite{BIOS} and the UEFI \cite{UEFI} systems completely. After the creation of partitions, the OS image is deployed partition wise.
+number of partitions  equal to that of the cloned image is created on HDD, and currently, this work supports 'MSDOS' and 'GPT' \cite{GPT} partition tables. In the 'MSDOS' partition table present in MBR \cite{MBR}, the number of 'primary' partitions are tracked so that it does not go above three partitions and if more partitions are required, they are made as 'logical' partitions in 'extended' partition. Most BIOS legacy systems use the 'MSDOS' partition table, and UEFI systems use the 'GPT' partition table. So, now the image deployment system supports both BIOS \cite{BIOS} and the UEFI \cite{UEFI} systems completely. After the creation of partitions, the OS image is deployed partition wise.
 \subsection{\usefont{T1}{phv}{b}{it} Multi-booting with other existing OS(s)}
-Grub utility called 'grub-mkconfig' detects and identifies different OSs for GRUB in a multi-boot system. The grub-mkconfig tool is integrated into IDOS. The grub-mkconfig, in turn, uses two main tools: \\
-i) os-prober \cite{osprober} : This tool detects OSs and partitions where they are present on HDD. It uses the linux-boot-prober tool to generate boot parameters for  Linux kernel. For other OSs, the os-prober finds the boot parameters through os-probes, e.g., Windows, MAC OS, etc. This tool needed to be customized and other dependency packages needed to be included in IDOS.\\
-ii) linux-boot-prober: This tool used to generate boot parameters for different Linux distributions using 'linux-boot-probes'. This tool is used by os-prober and, in turn, by grub-mkconfig.
-The tools: grub-mkconfig, os-prober, linux-boot-prober are integrated into IDOS using root filesystem overlay (rootfs\_overlay).
-After the image deployment, the grub-mkconfig tool is to generate the GRUB config file for that specific client and stored in the TFTP server. On the next boot, the client loads this GRUB config from the TFTP server and displays the list of OSs present in the multi-boot system.
-\subsection{\usefont{T1}{phv}{b}{it}Web based Image deployment management}
-A web application was built using the Django framework to facilitate the management of image deployment processes. Django is a Python-based free and open-source web framework, which follows the model-template-view architectural pattern. SQLite database is used for storage. SQLite is a relational database management system contained in a C library. Following  functionalities are integrated with this web application.
-\begin{enumerate}
-     \item   Client Registration: Each client has to be registered in the web application. Whenever a client connects to the server and boots, it sends a request to the webserver along with the details such as its name and MAC address. The web application will automatically register this client if the client is not already registered. The details of this client will be stored in the database.
+Grub utility called 'grub-mkconfig' detects and identifies different OS(s) for GRUB in a multi-boot system. The grub-mkconfig tool is integrated into IDOS. The grub-mkconfig, in turn, uses two main tools: 
+\begin{enumerate}[label=\roman*.]
+
+    \item os-prober \cite{osprober} : This tool detects OS(s) and partitions where they are present on HDD. It uses the linux-boot-prober tool to generate boot parameters for  Linux kernel. For other OS(s), the os-prober finds the boot parameters through os-probes, e.g., Windows, MAC OS, etc. This tool needed to be customized and other dependency packages needed to be included in IDOS.
+    \item linux-boot-prober: This tool used to generate boot parameters for different Linux distributions using 'linux-boot-probes'. This tool is used by os-prober and, in turn, by grub-mkconfig.
+    The tools: grub-mkconfig, os-prober, linux-boot-prober are integrated into IDOS using root filesystem overlay (rootfs\_overlay).
+\end{enumerate}
+After the image deployment, the grub-mkconfig tool is to generate the GRUB config file for that specific client and stored in the TFTP server. On the next boot, the client loads this GRUB config from the TFTP server and displays the list of OS(s) present in the multi-boot system.
+\subsection{\usefont{T1}{phv}{b}{it}Centralized Web Application based Image Management}
+A web application was built using the Django framework to facilitate the management of image management processes. Django is a Python-based free and open-source web framework, which follows the model-template-view architectural pattern. SQLite database is used for storage. SQLite is a relational database management system contained in a C library. Following  functionalities are integrated with this web application.
+\begin{enumerate}[label=\roman*.]
+     \item   Client Registration: Each client has to be registered in the web application. Whenever a client connects to the server and boots, it sends a request to the Web server along with details such as its name and MAC address. The web application will automatically register this client, if the client is not already registered. The details of this client will be stored in the database. The list of clients with details is shown in fig. \ref{reg_clients}.
     
-    \item Unicast Image deployment: The web application displays all clients who are registered. The administrator has the ability to choose any client and deploy an OS image to this client. The list of available OS images is stored in the database. The user will choose one of these images. A Task will be created and stored in the database representing the deployment of the image on a particular client. When the client boots, it sends a request asking for any pending tasks. This request is then responded with the previously created task.
+    \item Unicast Image deployment: The web application displays all clients who are registered. The administrator has the ability to choose any client and deploy an OS image to this client as shown in fig. \ref{task_image_deploy}. The list of available OS images is stored in the database. The user will choose one of these images. A Task will be created and stored in the database representing the deployment of the image on a particular client. When the client boots, it sends a request asking for any pending tasks. This request is then responded with the previously created task.
     
-    \item Cloning: The web application displays all clients who are registered. The administrator has the ability to choose any client and clone the disk of a client. The admin needs to give a name, by default all partitions are cloned and to clone specific partitions, the admin has to put partition numbers that needs to be cloned.
+    \item Cloning: The web application displays all clients who are registered. The administrator has the ability to choose any client and clone the disk of a client, shown in fig. \ref{cloning}. The admin needs to give a name, by default all partitions are cloned and to clone specific partitions, the admin has to put partition numbers that needs to be cloned.
     
-    \item Multicast image deployment: The admin needs to add clients to form a group and select appropriate image to be deployed using multicast to the group.
+    \item Multicast image deployment: The admin needs to add clients to form a group and select appropriate image to be deployed using multicast to the group as shown in fig. \ref{multicast_group}.
     
-    \item Settings: This page contains settings to edit and configure different servers of ROSIM. In the initial installation, the webserver needs to be installed, settings of different servers can be configured through the settings page. Then, the other servers (or components) of ROSIM can be installed which uses the setting provided at the web app for configuration. Hence, this page gives a centralised way to configure the whole ROSIM system.
+    \item Settings: This page contains settings to edit and configure different servers of ROSIM as shown in fig. \ref{settings}. In the initial installation, the web server needs to be installed, settings of different servers can be configured through the settings page. Then, the other servers (or components) of ROSIM can be installed which uses the setting provided at the web app for configuration. Hence, this page gives a centralised way to configure the whole ROSIM system.
     
-    %ss of each page for better understanding or refernce to results
+    
 \end{enumerate}
 
-\subsection{\usefont{T1}{phv}{b}{it} Multicast image deployment}
-The design proposed in Fig. \ref{Multicast_seq} is implemented. The communication between the Web server and storage server is accomplished through the use of REST APIs over HTTP. Two API endpoints were created at the storage server for following communication:
-\begin{enumerate}
+\subsection{\usefont{T1}{phv}{b}{it} Multicast Image Deployment}
+The design proposed in fig. \ref{Multicast_seq} is implemented. The communication between the Web server and storage server is accomplished through the use of REST APIs over HTTP. Two API endpoints were created at the storage server for following communication:
+\begin{enumerate}[label=\roman*.]
     \item "/multicast/createSession": When Web Server receives multicast task from admin, it communicates the task to the storage server with image name, number of receivers using this API and gets the allocated multicast address and port number as reply from storage server. The storage server allocates multicast IP address  239.255.0.0/16. According to RFC 2365 \cite{2365}, RFC 5771 \cite{5771}, it is IPv4 Local Scope in Administratively Scoped Multicast Space, intended for private use in sites. 
-    \item "multicast/startSession": When a client belonging to multicast group boots and asks for task, the web server gives the multicast group details to client. It then informs storage server to start multicast session so the clients can join using this API.
+    \item "/multicast/startSession": When a client belonging to multicast group boots and asks for task, the web server gives the multicast group details to the client. It then informs the storage server to start multicast session, so that the clients can join using this API.
 \end{enumerate}
 
-The image deployment requires both good speed and reliability mechanism as loss of packets is intolerable (could be some files in cloned disk image which is important). UDPcast \cite{udpcast} is a open-source multicast file transfer tool that can send data simultaneously to many clients on a LAN. In UDPcast, UDP over multicast is used because of it’s speed. UDPcast uses ACKs at the Application Layer and a system of timers that timeout dropped packets so they can be resent. Hence, UDPcast is used to implement multicast. 
-UDPcast tool contains mainly two programs :
-\begin{enumerate}
+The image deployment requires both, good speed and reliability mechanism as loss of packets is intolerable (could be some files in cloned disk image which is important). 'UDPcast' \cite{udpcast} is a open-source multicast file transfer tool that can send data simultaneously to many clients on a LAN. In 'UDPcast', UDP over multicast is used because of it’s speed. For reliability, 'UDPcast' uses ACKs at the Application Layer and a system of timers that timeout dropped packets so they can be resent. Hence, 'UDPcast' is used to implement multicast. 
+'UDPcast' tool contains mainly two programs :
+\begin{enumerate}[label=\roman*.]
 
-    \item Udp-sender: Udp-sender is used to  multicast a disk image to multiple udp-receivers on the local LAN. In order to do this, it uses Ethernet multicast, so that all receivers profit from the same physical datastream. Udp-sender is used at the storage server.
-    \item Udp-reciever: Udp-receiver is used to receive files sent by udp-sender i.e. the disk image. Udp-reciever tool is integrated with IDOS. 
+    \item 'udp-sender': 'udp-sender' is used to multicast a disk image to multiple 'udp-receiver' on the local LAN. In order to do this, it uses Ethernet multicast, so that all receivers profit from the same physical datastream. 'udp-sender' is used at the storage server.
+    \item 'udp-reciever': 'udp-receiver' is used to receive files sent by udp-sender i.e. the disk image. 'udp-reciever' tool is integrated with IDOS. 
 \end{enumerate}
 %references to udpcast
 \subsection{\usefont{T1}{phv}{b}{it}Proxy DHCP support}
-Proxy DCHP cannot be implemented using the standard isc-dhcp-server package, instead dnsmasq \cite{dnsmasq} package is used to implement it. Dnsmasq is a lightweight DNS, TFTP, PXE, router advertisement and DHCP server. It is configured to act as proxy DHCP server with the help of wiki \cite{dnsmasq_config}. It is configured to provide suitable Network GRUB files depending upon the type of PXE-client ARCH options (as mentioned in RFC 4578 \cite{4578}) provided in DHCP request by the PXE-clients.
+Proxy DCHP cannot be implemented using the standard 'isc-dhcp-server' package, instead 'dnsmasq' \cite{dnsmasq} package is used to implement it. 'dnsmasq' is a lightweight DNS, TFTP, PXE, router advertisement and DHCP server. It is configured as proxy DHCP server with the help of wiki \cite{dnsmasq_config}. It is configured to provide suitable Network GRUB files depending upon the type of PXE-client ARCH options (as mentioned in RFC 4578 \cite{4578}) provided in the (proxy) DHCP request by the PXE-clients.
 
-Also proxy DHCP based PXE-booting support needed to be added in the GRUB. The official GRUB 2.02  has bug in supporting proxy DHCP \cite{bug} and continued in GRUB 2.04. A patch proposed in the GRUB mailing-list \cite{patch} is applied to GRUB 2.04 to suuport proxy DHCP based PXE-booting.
-
+Also proxy DHCP based PXE-booting support needed to be added in the GRUB. The official GRUB 2.02  has bug in supporting proxy DHCP \cite{bug} and is continued in GRUB 2.04. A patch proposed in the GRUB mailing-list \cite{patch} is applied to GRUB 2.04 to support proxy DHCP based PXE-booting in GRUB 2.04.
+\\
 
 
 
@@ -524,56 +553,85 @@ Also proxy DHCP based PXE-booting support needed to be added in the GRUB. The of
 
 \subsection{\usefont{T1}{phv}{b}{it} Miscellaneous}
 Following miscellaneous items were done:
-\begin{enumerate}
-    \item Reproducible builds and optimizing the size of IDOS: IDOS is a Linux distribution built using the Buildroot tool. Only the required packages are included to optimize the size of IDOS. The necessary config files, rootfs\_overlay, external package config (partclone) of Buildroot (see Buildroot Documentation \cite{buildrootdoc}), are saved, versioned, and built-in container for reproducible builds. This process makes in helping automate the builds of IDOS in the future.
-    \item Resolving errors in shell scripts and structuring of scripts: Most of the project's functionalities are implemented in shell scripting, which is interpreted language having no error handling. Many errors were rectified by re-structuring a single script into many scripts, each having basic functionality. Cleaner code with functions is implemented.
-    \item Resolving the need to build IDOS specific to a network and increasing ability to package: During initial works, the TFTP server, NFS server IP and parameters to mount were included in the ramfs of the kernel. For different networks, the IDOS needed to be rebuilt again. This was solved by passing few environment variables such as Web server IP in GRUB config file to IDOS kernel at boot time as boot parameters and the rest of the setting variables such as TFTP server IP, NFS server IP, NFS share directory etc. obtained from the Web server. This makes IDOS independent of the network, and to deploy the system in different network with only the GRUB config needs to be updated accordingly.
+\begin{enumerate}[label=\roman*.]
+    \item Reproducible builds and optimizing the size of IDOS: IDOS is a Linux distribution built using the 'Buildroot' tool. Only the required packages are included to optimize the size of IDOS. The necessary config files, rootfs\_overlay, external package config (partclone) of 'Buildroot' (see 'Buildroot' Documentation \cite{buildrootdoc}), are saved, versioned, and built-in container for reproducible builds. This process helps in automating the builds of IDOS in the future.
+    \item Resolving errors in shell scripts and structuring of scripts: Most of the project's functionalities are implemented in shell scripting, which is an interpreted language, having no error handling. Many errors were rectified by re-structuring a single script into many scripts, each having basic functionality. Cleaner code with functions is implemented.
+    \item Resolving the need to build an IDOS, specific to a network and increasing the ability to package: During initial works, the TFTP server, NFS server IP and parameters to mount were included in the 'ramfs'. For different networks, the IDOS needed to be rebuilt again. This was solved by passing few environment variables such as Web server IP in GRUB config file to IDOS kernel at  boot time as boot parameters and the rest of the setting variables such as TFTP server IP, NFS server IP, NFS share directory etc. obtained from the Web server. This makes IDOS independent of the network, and to deploy the system in different network with only the GRUB config needs to be updated accordingly.
 \end{enumerate}
+
+\subsection{\usefont{T1}{phv}{b}{it}Code}
+The ROSIM system is implemented with integration of various open-source tools and consists of various components, all of which are available at Gitlab \cite{code}. The project consists of following repositories, with each repository corresponding to a component of ROSIM system:
+\begin{enumerate}[label=\roman*.]
+    \item Remote imaging: This is the main repository consisting of configuration of setting up various servers and data that needs to kept at various servers.
+    \item IDOS: This is the operating system environment used for imaging with ROSIM. It contains 'Buildroot' config files, external packages like Partclone, scripts that automate the cloning and deployment. We can create reproducible builds of IDOS using 'Buildroot' tool and the code in this repository.
+    \item ROSIM-Web\_App: It contains ROSIM web application built using the Django framework to facilitate the image management processes.
+    \item storage: This contains 'http-server' developed using Django as back-end and multicasting tool UDPcast for multicast image deployment.
+\end{enumerate}
+ 
+
+
+
 % - buildroot
 % - builds
 % - scripts errors
 % - IDOS independency - auto,man, VM, LAN 
  \newpage
 \section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Results and Analysis}
-We did an analysis of two cloning image utilities through our prototype, which is data duplicator (dd) and Partclone on their cloning and imaging capabilities w.r.t space and time. The aim of the analysis is to show the superiority of Partclone over dd and also the advantage of implementing a cache mechanism to reduce network traffic.
+We did an analysis of two cloning image utilities through our prototype, which is data duplicator (dd) and Partclone on their cloning and imaging capabilities w.r.t space and time. The aim of the analysis is to show the superiority of Partclone over 'dd'  and also the advantage of implementing a cache mechanism to reduce network traffic.
 
-\subsection{\usefont{T1}{phv}{b}{it} Comparing the sizes of cloned HDD images}
+% \subsection{\usefont{T1}{phv}{b}{it} Comparing the sizes of cloned HDD images }
+\subsection{\usefont{T1}{phv}{b}{it} Analysis on Cloning Hard Disk Drive (HDD) }
 
-The size of the cloned image from each utility after compression is compared in Table \ref{images} for different OSs. Cloning is done on four different OSs, including Linux based and Windows OS. 
+The size of the cloned image from each utility after compression is compared in Table \ref{images} for different OS(s). Cloning is done on four different OS(s), including Linux based and Windows OS. 
 
-The OSs cloned are sparse images as the used disk is smaller than the actual size of the disk cloned. Partclone clones and images it as a sparse image, whereas dd doesn't support sparse image cloning and imaging. From, the table it can be seen that the Partclone efficiently clone only the sparse image and compresses it using gzip, which is much smaller in size compared to cloned image using dd.
+The OS(s) cloned are sparse images, as the used disk is smaller than the actual size of the disk cloned. Partclone clones and images it as a sparse image, whereas 'dd' doesn't support sparse image cloning and imaging. From the table, it can be seen that the Partclone efficiently clones only the sparse image and compresses it using 'gzip', which is much smaller in size compared to cloned image using 'dd'. Table \ref{cloning_time} tabulates the time taken by Partclone in cloning the disk as per experimental setup i) in Section 5.4.
 
 
 \begin{table}[H]
 \centering
-\caption {Comparison of sizes of cloned images using Data Duplicator ( dd ) and Partclone} 
-\label{tab:title} 
+\caption {Comparison of sizes of cloned images using Data Duplicator ( 'dd' ) and Partclone} 
+\label{cloning_tools} 
 \begin{center}
 \begin{tabular}{|c|c|c|l|l|}
 
 \hline
-\begin{tabular}[c]{@{}c@{}}Image \\ Name\end{tabular} & \begin{tabular}[c]{@{}c@{}}Total size\\  of\\  image (GB)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Sparse image \\ size (GB)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Compressed\\  Partclone image \\ size (GB)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Compressed \\ dd image (GB)\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}c@{}}Image \\ Name\end{tabular} & \begin{tabular}[c]{@{}c@{}}Total size\\  of\\  image (GB)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Sparse image \\ size (GB)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Compressed\\  Partclone image \\ size (GB)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Compressed \\ 'dd'  image (GB)\end{tabular} \\ \hline
 Alpine                                               & 5.57                                                                   & 3.60                                                               & 0.76                                                                              & 1.74                                                                \\ \hline
-Ubuntu 18.04                                          & 45.00                                                                     & 4.95                                                              & 1.66                                                                               & 6.84                                                                \\ \hline
-Deepin                                                & 42.80                                                                   & 11.80                                                              & 2.50                                                                                & 2.80                                                                 \\ \hline
-Windows                                               & 53.70                                                                   & 16.50                                                              & 6.60                                                                                & 8.10                                                                 \\ \hline
+Ubuntu 18.04                                          & 45.00                                                                     & 4.95                                                              & 1.65                                                                               & 6.84                                                                \\ \hline
+Deepin                                                & 42.80                                                                   & 11.80                                                              & 2.45                                                                                & 2.80                                                                 \\ \hline
+Windows                                               & 53.70                                                                   & 16.50                                                              & 6.63                                                                               & 8.10                                                                 \\ \hline
 \end{tabular}
 
 \label{images}
 \end{center}
 \end{table}
+
+\begin{table}[]
+\caption {Time taken for cloning different images using Partclone along with the image sizes \\(results obtained from experimental setup i) mentioned in Section 5.4} 
+\begin{tabular}{|c|c|c|c|}
+
+\hline
+Image Name   & \begin{tabular}[c]{@{}c@{}}Sparse Image\\ Size (GB)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Compressed \\ Image Size (GB)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Cloning \\ (from VM)\\ (in s)\end{tabular} \\ \hline
+Alphine      & 3.60                                                             & 0.76                                                                  & 503                                                                   \\ \hline
+Ubuntu 18.04 & 4,95                                                             & 1.65                                                                  & 1295                                                                  \\ \hline
+Deepin       & 11.80                                                            & 2.45                                                                  & 1956                                                                  \\ \hline
+Windows      & 16.50                                                            & 6.63                                                                  & 3761                                                                  \\ \hline
+\end{tabular}
+\label{cloning_time}
+\end{table}
+
 \subsection{\usefont{T1}{phv}{b}{it} Analysis on Image deployment time }
-Similar to the above analysis w.r.t cloning, analysis on single unicast image deployment at a time using different tools - Partclone and dd are conducted w.r.t time taken. Besides, analysis of concurrent imaging, i.e., time taken in image deployment in five computers concurrently (using Partclone) is studied, and analysis on developed cached image deployment (using Partclone) is done.
+Similar to the above analysis w.r.t cloning, analysis on single unicast image deployment at a time using different tools - Partclone and 'dd'  are conducted w.r.t time taken. Besides, analysis of concurrent imaging, i.e., time taken in image deployment in five computers concurrently (using Partclone) is studied, and analysis on developed cached image deployment (using Partclone) is done.
 
-From Table \ref{imaging}, single unicast Partclone image deployment from the NFS server takes the least time compared to image deployment through dd and also better than cached image deployment, i.e., from local HDD using Partclone. Partclone does better than dd because smaller cloned image size can be transferred faster through the network than the cloned images of dd and also due to sparse image writing, i.e., write data only to used blocks and just syncs the unused blocks. The dd write even the unused blocks while imaging deployment. Cached image deployment is slower than single unicast image deployment using Partclone because the HDD I/O speed lesser than the network transfer speed. 
+From Table \ref{imaging}, single unicast Partclone image deployment from the NFS server takes the least time compared to image deployment through 'dd' and also better than cached image deployment, i.e., from local HDD using Partclone. Partclone does better than 'dd' because smaller cloned image size can be transferred faster through the network than the cloned images of 'dd' and also due to sparse image writing, i.e., write data only to used blocks and just syncs the unused blocks. The 'dd' writes even the unused blocks while imaging deployment. Cached image deployment is slower than single unicast image deployment using Partclone because the HDD I/O speed lesser than the network transfer speed. 
 
-In concurrent image deployment, the same image is being downloaded by the different clients from the same NFS server, and these many unicast downloads lead to bottleneck at network cable from the NFS server to the switch. Thereby decreasing the rate of image transfer due to higher network traffic and hence increases the deployment time. But once the image is cached in the concurrently requesting clients, the clients no longer download the image from the NFS server. Instead, it deploys from the local HDD. Hence, caching reduces the network traffic and therefore reduces the time taken for image deployment. The caching reduces the image deployment drastically when compared to concurrent image deployment once caching is done. The network traffic problem is still not solved in concurrent non-cache image deployment, which happens when the cached image is not available at clients.  
+In concurrent image deployment, the same image is being downloaded by different clients from the same NFS server, and these many unicast downloads lead to bottleneck at network cable from the NFS server to the switch. Thereby decreasing the rate of image transfer due to higher network traffic and hence increases the deployment time. But once the image is cached in the concurrently requesting clients, the clients no longer download the image from the NFS server. Instead, it deploys from the local HDD. Hence, caching reduces the network traffic and therefore reduces the time taken for image deployment. Caching reduces the image deployment drastically when compared to concurrent image deployment once caching is done. The network traffic problem is still not solved in concurrent non-cache image deployment, which happens when the cached image is not available at clients.  
 \begin{table}[H] 
 \centering
-\caption {Comparison of time taken in deploying the images using different methods} 
+\caption {Comparison of time taken in deploying the images using different methods \\(results obtained from experimental setup ii) mentioned in Section 5.4)} 
 \begin{tabular}{|c|c|c|l|l|l|l|}
 \hline
-Image Name   & \begin{tabular}[c]{@{}c@{}}Sparse \\ Image \\ size (GB)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Partclone \\ restore in \\ VM (s)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Partclone \\ restore in\\ computer \\ (s)\end{tabular} & \begin{tabular}[c]{@{}l@{}}dd restore\\  in\\  computer \\ (s)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Concurrent \\Image \\ deployment \\ (s)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Cached\\  image \\ deployment \\ (s)\end{tabular} \\ \hline
+Image Name   & \begin{tabular}[c]{@{}c@{}}Sparse \\ Image \\ size (GB)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Partclone \\ restore in \\ VM (s)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Partclone \\ restore in\\ computer \\ (s)\end{tabular} & \begin{tabular}[c]{@{}l@{}}'dd' restore\\  in\\  computer \\ (s)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Concurrent \\Image \\ deployment \\ (s)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Cached\\  image \\ deployment \\ (s)\end{tabular} \\ \hline
 Alpine      & 3.60                                                                  & 140                                                                       & 130                                                                               & 166                                                                         & 360                                                                              & 157                                                                          \\ \hline
 Ubuntu 18.04 & 4.95                                                                 & 250                                                                       & 200                                                                               & 756                                                                         & 450                                                                              & 297                                                                          \\ \hline
 Deepin       & 11.80                                                                 & 800                                                                       & 415                                                                               & 600                                                                         & 1200                                                                             & 500                                                                          \\ \hline
@@ -582,8 +640,11 @@ Windows      & 16.50                                                            
 
 \label{imaging}
 \end{table}
+
+
+
 \subsection{\usefont{T1}{phv}{b}{it} Supporting Image deployment on existing OS(s) system and Multi-booting }
-As discussed in section 4.4.3, 5.5, 5.6, support for Image deployment on existing OS(s) system and Multi-booting feature is included. The feature is tested by imaging OS on client having already one or more OSs.
+As discussed in sections 4.4.3, 5.5, 5.6, support for Image deployment on existing OS(s) system and Multi-booting feature is included. The feature is tested by imaging OS on clients having already one or more OSs.
 
 Here, as shown in fig. \ref{before_image}, two OSs exist - Windows NT 6 and Ubuntu-18.04 on the client before OS imaging. Then Deepin OS image is deployed and rebooted. The GRUB now shows and can load three OSs, i.e., Windows NT 6, Ubuntu-18.04, and Deepin, as shown in fig. \ref{after_image}.
 \begin{figure}[h!]
@@ -601,11 +662,11 @@ Here, as shown in fig. \ref{before_image}, two OSs exist - Windows NT 6 and Ubun
 % screenshot of existing oS
 % screenshot after image deployment to show multi-boot support
 \newpage
-\subsection{\usefont{T1}{phv}{b}{it} Web application for image deployment management }
-Various screenshots of Web UI are shown to demonstrate the features of the web application. Fig. \ref{home_page} shows the home page of the web app ROSIM (Remote OS Image Management), it contains login for users (admin/student), Clients, About tab at the top. All the registered clients are displayed with their MAC address at the Client web page shown in fig. \ref{reg_clients}. If one of the clients is chosen for the task, it redirected to another page having drop-down button consisting of all the available images is provided shown in fig. \ref{task_image_deploy}. After choosing the relevant image, the administrator can deploy the image to a particular client.
+\subsection{\usefont{T1}{phv}{b}{it} Web application for Image Management }
+Various screenshots of Web UI are shown to demonstrate the features of the web application. fig. \ref{home_page} shows the home page of the web app ROSIM (Remote OS Image Management), it contains login for users (admin/student), Clients, Settings tab at the top. All the registered clients are displayed with their MAC address at the Client web page shown in fig. \ref{reg_clients}. If one of the clients is chosen for the task, it is redirected to another page having drop-down button consisting of all the available images as shown in fig. \ref{task_image_deploy}. After choosing the relevant image, the administrator can deploy the image to a particular client using the deploy button. The cloning can be done by pressing the cloning button at fig. \ref{task_image_deploy} to get options as shown in fig. \ref{cloning}. The user needs to provide the name of the image, partition numbers of client to be cloned (by default all partitions are cloned if no partition number given). At fig. \ref{reg_clients}  web page, clients can be added to form multicast group as shown in fig. \ref{multicast_group} and after choosing a image, multicast image deployment task is created. Fig. \ref{settings} shows settings web page of the application, useful for installation of ROSIM system and any change in the settings of the system can be informed to the web app by updating the settings.
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{webapp1.png}
+    \includegraphics[width=\linewidth]{home_page.png}
     \caption{Home page}
     \label{home_page}
 \end{figure}
@@ -615,7 +676,6 @@ Various screenshots of Web UI are shown to demonstrate the features of the web a
     \caption{List of registered clients}
     \label{reg_clients}
 \end{figure}
-.
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{Deployment.png}
@@ -645,26 +705,27 @@ Various screenshots of Web UI are shown to demonstrate the features of the web a
 
 \newpage 
 
-
 \subsection{\usefont{T1}{phv}{b}{it} Multicast image Deployment}
+The image deployment to three VM clients using multicast was carried as per the experimental setup i) mentioned in Section 5.4. The fig.\ref{multicast_iftop} gives instantaneous traffic of image deployment using multicast from the storage server, i.e. a single stream of image deployment through group IP 239.255.0.122 (the traffic from other 3 IPs correspond to ACKs to multicast stream by each client belonging to the group). The fig. \ref{multicast_vnstat} gives the average traffic during the multicast session of deploying Ubuntu 18.04 image (refer Table \ref{cloning}), it can be noticed that the multicast only transferred one copy of the image. In contrast. fig. \ref{unicast_iftop} gives instantaneous network traffic in unicast image deployment of the same image to three client on their respective IPs. The fig. \ref{unicast_vnstat} gives the average traffic during the concurrent unicast of the image. It can be noticed that the each unicast transferred one copy of the image, i.e. three copies of the image transferred through network.
+
 \begin{figure}
 \centering
   \includegraphics[width=1\linewidth]{multicast_3_iftop.png}
-  \caption{Instantaneous network traffic of Multicast image deployment to 3 clients captured using iftop tool}
+  \caption{Instantaneous network traffic of Multicast image deployment to 3 clients captured using 'iftop'\cite{iftop} tool}
   \label{multicast_iftop}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=1\linewidth]{unicast_3_iftop.png}
-  \caption{ Instantaneous network traffic of Unicast image deployment to 3 clients captured using iftop tool}
+  \caption{ Instantaneous network traffic of Unicast image deployment to 3 clients captured using 'iftop' tool}
   \label{unicast_iftop}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=1\linewidth]{multicast_3.png}
-  \caption{Network traffic of Multicast image deployment to 3 clients captured using vnstat tool}
+  \caption{Network traffic of Multicast image deployment to 3 clients captured using vnstat \cite{vnstat} tool}
   \label{multicast_vnstat}
 \end{figure}
 
@@ -674,61 +735,60 @@ Various screenshots of Web UI are shown to demonstrate the features of the web a
   \caption{Network traffic of Unicast image deployment to 3 clients captured using vnstat tool}
   \label{unicast_vnstat}
 \end{figure}
+
+Simultaneous multicast tasks were tested, by creating two multicast task with two different clients each. The Web application creates two multicast session with different group IPs and ports as mentioned in section 4.4.4. The fig. \ref{multicast_multiple} is the instantaneous traffic at storage server, two multicast session can be seen, one of 239.255.0.228 and another of 239.255.0.231. 
+\begin{figure}
+  \centering
+  \includegraphics[width=1\linewidth]{multicast_multiple_iftop.png}
+  \caption{Simultaneous multiple Multicast sessions i.e. of 239.255.0.228 and 239.255.0.231, traffic captured using iftop}
+  \label{multicast_multiple}
+\end{figure}
+
+Table \ref{multicast_table} tabulates the time taken by multicast and unicast methods to deploy images to three VM clients. Multicast image deployment time is faster than that of concurrent unicast image deployment  to three clients. This is because of lower bottleneck of network traffic in multicast as against three unicasts. Also, Multicast image deployment time is almost equal to one unicast image deployment. The multicast image deployment time should remain relatively constant even if the number of clients increase, Also, the effect of  doing multicasting over unicast can be more clearly seen with more concurrent clients (than just 3). But the testing of this hypothesis could not be done due to limited number of computers available. 
+
+\begin{table}[]
+\caption{Comparison of time taken in image deployment against one Unicast image deployment, concurrent image deployment to three clients using Unicast and Multicast in VMs setup \\ (results obtained from experimental setup i) mentioned in Section 5.4) }
+\begin{tabular}{|c|c|c|l|l|}
+\hline
+Image Name   & \begin{tabular}[c]{@{}c@{}}Compressed\\  Image Size (GB)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Unicast image \\ deployment \\ (VM) (in s)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Concurrent \\ Unicast  image \\ deployment \\ (VMs) (in s)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Multicast  image\\ deployment \\ (VMs) (in s)\end{tabular} \\ \hline
+Alpine       & 0.76                                                                  & 410                                                                        & 490                                                                                       & 460                                                                          \\ \hline
+Ubuntu 18.04 & 1.65                                                                  & 650                                                                        & 980                                                                                       & 780                                                                          \\ \hline
+Deepin       & 2.45                                                                  & 1265                                                                       & 1830                                                                                      & 1430                                                                         \\ \hline
+Windows      & 6.63                                                                  & 2783                                                                       & 3150                                                                                      & 2937                                                                         \\ \hline
+\end{tabular}
+\label{multicast_table}
+\end{table}
 % multiple multicast-session 
 \newpage
-\subsection{\usefont{T1}{phv}{b}{it} Proxy DHCP based PXE booting}
+\subsection{\usefont{T1}{phv}{b}{it} Proxy DHCP based PXE-booting}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\linewidth]{proxydhcp.png}
+  \caption{DHCP packet capture in proxy DHCP based PXE-booting, using wireshark}
+  \label{proxydhcp_wireshark}
+\end{figure}
+Proxy DHCP (using dnsmasq) and classic DHCP server (using isc-dhcp-server package) was setup on two different computers with IP 192.168.56.103 and 192.168.56.101 respectively. The fig. \ref{proxydhcp_wireshark} shows the DHCP packets capture during PXE-booting in the setup described. The PXE-clients broadcasts DISCOVER message in the LAN, both the DHCP servers responds with a offer. Standard DHCP server (192.168.56.101) offers IP address, gateway IP, etc, to PXE-client and the client requests IP to this DHCP and DHCP responds with ACK to requested IP address. Then, PXE-client requests (proxyDHCP request) the proxy DHCP server (192.168.56.103) for PXE-boot parameters by giving PXE-client option. The proxy DHCP server responds with proxyDHCP ACK with details of TFTP server (192.168.56.103) in next server and appropriate grub filename (/boot/grub/x86\_64-efi/core.efi) in boot file name option. This is in accordance to that prescribed PXE specification of Intel (figure 2-4, Pg-16-18 in the technical report \cite{pxe_intel}).
+
+
 
 \newpage
-\section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Conclusions and Future work}
- The designed architecture, i.e., PXE boot, remote OS cloning, and image deployment and web base image cloning and deployment management, are implemented in the form of a prototype. Currently, this project supports re The designed architecture, i.e., PXE boot, remote OS cloning, and image deployment and web base image cloning and deployment management, are implemented in the form of a prototype. Currently, this project supports remote OS client-driven and web-based image deployment to VM or bare metal clients using Partclone, which are connected through a LAN network. The cloned OS images are deployed on the r
+\section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Conclusion and Future work}
 
-mote OS client-driven and web-based image deployment to VM or bare metal clients using Partclone, which are connected through a LAN network. The cloned OS images are deployed on the remote machines as expected, and the clients can multi-boot into any one of the OSs. The cache mechanism is partially implemented. The image deployment system supports UEFI firmware clients completely. The following work has to be carried out in the future.
-\begin{enumerate}
-    \item Implement suitable cache replacement policy  
-    \item Improve Web UI and add features such as cloning, group image deployment.
-    % \item Currently, only BIOS systems are supported. Support for UEFI systems must also be developed
-    \item Instead of unicast image deployment in concurrent imaging, multicast imaging performs better and is more efficient as it transfers only one image through the network to multiple clients, thereby reducing the network traffic.
-    % \item Support partition wise OS imaging and booting must be included
-    \item Proper Scaling and testing measures must be undertaken
-\end{enumerate}
-
+Remote Operating System Image Management (ROSIM) is a centralized system for easy, mass installation and management of OS remotely to get homogeneity across computers. This project majorly is developed for college labs, but can be adapted for the corporate environment and datacenters. ROSIM system works on bare hardware machine PXE-clients (i.e., no special software required) through the process of PXE-boot employing Network GRUB as the bootloader and a tiny Linux-based OS containing the required tools called IDOS.  IDOS clones and deploys the image. A caching mechanism is implemented and is found to decrease the load on the network during frequent periodic imaging of the same image in college labs. Partclone tool is used to efficiently clone the hard disk of the computer to a sparse image and is stored in a compressed format. ROSIM supports UEFI and legacy BIOS systems. A novel existing OS imaging technique is developed where ROSIM deploys an OS without disturbing existing OS (if enough free space is available) on a computer client. Multibooting of these OS(s) is achieved through customization of grub-utilities and Network GRUB.
+ 
+ A web application is developed for image management and acts as the centralized system through which a user can accomplish cloning and deploying images to one or more clients remotely. Image deployment by multicast is developed and found that it decreases the network traffic during concurrent same image deployment to many clients in the network. We have shown that due to reduced traffic, the image deployment by multicast to three clients is faster in time than the three concurrent unicast deployment. To deploy ROSIM system in a college LAN, the DHCP server in the college network needs to be modified to support PXE-booting. However, not always, one has access to the DHCP server of the network. To compensate this, a proxy DHCP server is used, and ROSIM is developed and tested to support this architecture. ROSIM is install-able and configurable through settings page of web application. 
+ 
+ In summary, we have designed and developed the ROSIM system product based on open-source components only, and tested by deploying it on the test network. There is scope for improvement of ROSIM such as auto-installing the whole ROSIM system using the settings page of the web application. Also, to improve better access control between different types of users.
 
 %create BibTex files for references
 \newpage
 % \section*{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}References}
 \bibliography{MP.bib}
-% \begin{enumerate}
-%     \item Josh A. Meek, Michael K. Bradshaw et al. Web-Based Computer Lab Imaging with Grimiore. In Proceedings of the 37th annual ACM SIGUCCS fall conference: communication and collaboration ( 2009 ) doi: 10.1145/1629501.1629507
-%     \item Li linhui, Zhang Ke, Zhang Fang et al. Network Center's Highly-Efficient Management Solutions based on Intel PXE-based Remote Cloning System.
-%     In 3rd International Conference on Advanced Computer Control (ICACC 2011)
-%     \newline
-%     doi: 10.1109/ICACC.2011.6016442
-%     \item \href{https://fogproject.org/}{FOG Project} - A free open-source network computer cloning and management solution
-%     \newline
-%     \url{https://fogproject.org/}
-    
-%     \item Wikipage of FOG project
-%     \newline
-%     \url{https://wiki.fogproject.org/}
-%     \item PXE - Preboot execution environment
-%     \newline
-%     \url{https://en.wikipedia.org/wiki/Preboot_Execution_Environment}
-%     \item Partclone - Partition clone and restore tool
-%     \newline
-%     \url{https://www.partclone.org/}
-%     \item Partimage - Open source disk backup software
-%     \newline
-%     \url{https://www.partimage.org/}
-%     \item IPXE - Open source network boot firmware
-%     \newline
-%     \url{https://ipxe.org/}
-
-% \end{enumerate}
 \newpage
 \section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Glossary}
 \begin{enumerate}
        \item BIOS: BIOS (an acronym for Basic Input/Output System and also known as the System BIOS, ROM BIOS, or PC BIOS) is the firmware used to perform hardware initialization during the booting process (power-on startup), and to provide runtime services for operating systems and programs.
-    \item dd: dd is a command-line utility for Unix and Unix-like operating systems; the primary purpose is to clone/ create a backup and restore/write the hard disk. This tool even
+    \item 'dd': 'dd' is a command-line utility for Unix and Unix-like operating systems; the primary purpose is to clone/ create a backup and restore/write the hard disk. This tool even
     \item DHCP: The Dynamic Host Configuration Protocol (DHCP) is a network management protocol used on UDP/IP networks whereby a DHCP server dynamically assigns an IP address and other network configuration parameters to each device on a network so they can communicate with other IP networks.
     \item HDD: It refers to a hard disk drive.
     \item IDOS: Image Deployment operating System (IDOS), is a customized Linux based OS developed from Buildroot for this project. It contains tools for image deployment.
@@ -741,15 +801,17 @@ mote OS client-driven and web-based image deployment to VM or bare metal clients
     \item UEFI: The Unified Extensible Firmware Interface (UEFI) is a specification that defines a software interface between an operating system and platform firmware. Its function is similar BIOS, but UEFI is the new version of firmware, which supports more number of primary partitions, unlike  BIOS, which has MBR and supports only four primary partitions.
     \item Sparse Image: In this context, it refers to a disk image containing a sufficient amount of free space compared to the used space of the disk.
     \item Multi-boot: Multi-booting is the act of installing multiple operating systems on a computer, and being able to choose which one to boot. The term dual-booting refers to the common configuration of specifically two operating systems. Multi-booting may require a custom boot loader. 
+    \item'iftop': 'iftop' is linux command-line tool to display bandwidth usage on an interface by host. 'iftop' listens to network traffic on a named interface and displays a table of current bandwidth usage by pairs of hosts. This is used in the project to display instantaneous network traffic at storage servers.
+    \item 'vnstat':  'vnstat' is a console-based network traffic monitor. It keeps a log of hourly, daily, session wise and monthly network traffic for the selected interface(s). This is used for average network traffic at storage servers.
+    
 \end{enumerate}
-\newpage
-\section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Timeline}
- \begin{figure}[h!]
-    \centering
-    % \includegraphics[width=\linewidth]{timeline.jpeg}
-    \includegraphics[height=4in, width=7in, angle=-90]{timeline.jpeg}
-    \caption{Timeline of work}
-    \label{timeline}
-\end{figure}
+% \newpage
+% \section{\fontsize{16pt}{1em} \usefont{T1}{phv}{b}{}Timeline}
+%  \begin{figure}[h!]
+%     \centering
+%     \includegraphics[height=4in, width=6.5in]{timeline3.jpeg}
+%     \caption{Timeline of work}
+%     \label{timeline}
+% \end{figure}
 
 \end{document}
